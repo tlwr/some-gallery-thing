@@ -1,17 +1,10 @@
 import request from 'supertest';
-import express from 'express';
 
-import {healthcheck} from './';
+import {app} from '../../app'
+
 
 describe('healthcheck', () => {
-  let app: express.Application;
-
-  beforeEach(() => {
-    app = express();
-    app.get('/', healthcheck);
-  });
-
   it('should return 200 OK', async () => {
-    await request(app).get('/').expect(200);
+    await request(app).get('/healthcheck').expect(200);
   });
 });
