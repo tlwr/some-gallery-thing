@@ -11,9 +11,9 @@ export const exampleEvents: ReadonlyArray<GalleryEvent> = [
     closeDate: moment('2019-08-11').toDate(),
 
     gallery: {
-      name: 'Tate Modern',
-      address: 'Bankside, London SE1 9TG',
-      website: 'https://www.tate.org.uk/visit/tate-modern',
+      name: 'Tate Britain',
+      address: 'Millbank, London SW1P 4RG',
+      website: 'https://www.tate.org.uk/visit/tate-britain',
 
       image: 'https://storage.googleapis.com/tate-digital/ui/3.9.0-compressed/static/images/tate-logo.png',
     },
