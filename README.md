@@ -1,5 +1,9 @@
 # some gallery thing
 
+![](https://img.shields.io/github/license/tlwr/some-gallery-thing?style=flat-square)
+![](https://img.shields.io/github/contributors/tlwr/some-gallery-thing?style=flat-square)
+![](https://img.shields.io/github/last-commit/tlwr/some-gallery-thing?style=flat-square)
+
 > As a person who looks at art, I want to see what is on in my local area, so I
 > can go see art.
 
