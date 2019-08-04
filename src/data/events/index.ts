@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import {GalleryEvent} from '../types';
+import {GalleryEvent} from '../../types';
 
 export const exampleEvents: ReadonlyArray<GalleryEvent> = [
   {
