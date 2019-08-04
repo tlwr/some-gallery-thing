@@ -7,7 +7,7 @@
 
 1. install nodejs LTS
 2. `npm install`
-3. npm run watch
+3. `npm run watch`
 4. open `localhost:8080`
 
 # structure
