@@ -1,5 +1,23 @@
 {% extends '../layout.njk' %}
 
 {% block content %}
-  {{ events | dump }}
+
+  <article>
+    <h2 class="f3 fw4 pa3 mv0">Events</h2>
+    <div class="cf pa2">
+      <div class="fl w-50 w-25-m w-20-l pa2">
+        {% for event in events %}
+        <a class="db center mw5 black link dim"
+           href="{{ event.website or event.gallery.website }}">
+
+          <dl class="mt2 f6">
+            <dd class="ml0 fw9">{{ event.title }}</dd>
+            <dd class="ml0 gray">{{ event.gallery.name }}</dd>
+          </dl>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  <pre><code>{{ events | dump(2) }}</code></pre>
+
 {% endblock %}
