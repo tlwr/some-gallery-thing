@@ -1,8 +1,9 @@
 # some gallery thing
 
-![](https://img.shields.io/github/license/tlwr/some-gallery-thing?style=flat-square)
-![](https://img.shields.io/github/contributors/tlwr/some-gallery-thing?style=flat-square)
-![](https://img.shields.io/github/last-commit/tlwr/some-gallery-thing?style=flat-square)
+![Build status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftlwr%2Fsome-gallery-thing%2Fbadge&style=flat-square)
+![License](https://img.shields.io/github/license/tlwr/some-gallery-thing?style=flat-square)
+![Contributors](https://img.shields.io/github/contributors/tlwr/some-gallery-thing?style=flat-square)
+![Last commit](https://img.shields.io/github/last-commit/tlwr/some-gallery-thing?style=flat-square)
 
 > As a person who looks at art, I want to see what is on in my local area, so I
 > can go see art.
