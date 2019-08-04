@@ -19,7 +19,8 @@ nunjucks.configure(
   path.join(__dirname, '..', 'views'),
   {
     autoescape: true,
-    express: app
+    express: app,
+    noCache: process.env.NODE_ENV !== 'production',
   },
 );
 
