@@ -1,9 +1,0 @@
-source 'https://rubygems.org'
-
-gem 'chronic'
-gem 'http'
-gem 'nokogiri'
-gem 'rspec'
-gem 'rufus-scheduler'
-gem 'sinatra'
-gem 'sinatra-contrib'
