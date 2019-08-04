@@ -19,3 +19,5 @@ the template for the entire site.
 (CSS and images) live.
 
 This project uses `typescript`, `jest`, and `sass`.
+
+Types are defined in `src/types`. Examples and static data goes in `src/data`.
