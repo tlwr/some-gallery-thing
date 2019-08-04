@@ -13,12 +13,19 @@ export const app = express();
 
 app.set("port", process.env.PORT || 8080);
 
-app.use(pino({
-  prettyPrint: {
-    colorize: true,
-    levelFirst: false,
-  },
-}));
+// istanbul ignore next
+{
+  if (process.env.NODE_ENV === 'development') {
+    app.use(pino({
+      prettyPrint: {
+        colorize: true,
+        levelFirst: false,
+      },
+    }));
+  } else if (process.env.NODE_ENV === 'production') {
+    app.use(pino());
+  }
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
