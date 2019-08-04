@@ -9,7 +9,9 @@
         {% for event in events %}
         <a class="db center mw5 black link dim"
            href="{{ event.website or event.gallery.website }}">
-
+           {% if event.image %}
+            <img src="{{ event.image }}" class="w-100 db outline black-10"/>
+           {% endif %}
           <dl class="mt2 f6">
             <dd class="ml0 fw9">{{ event.title }}</dd>
             <dd class="ml0 gray">{{ event.gallery.name }}</dd>
