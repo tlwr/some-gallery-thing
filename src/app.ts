@@ -2,6 +2,7 @@ import express from 'express';
 import nunjucks from 'nunjucks'
 import bodyParser from 'body-parser';
 import path from 'path';
+import prometheus from 'express-prom-bundle';
 
 import {healthcheck} from './controllers/healthcheck';
 import {listEvents} from './controllers/events';
@@ -13,7 +14,7 @@ app.set("port", process.env.PORT || 8080);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-console.info(path.join(__dirname, 'views'));
+app.use(prometheus({ includeMethod: true }));
 
 nunjucks.configure(
   path.join(__dirname, '..', 'views'),
