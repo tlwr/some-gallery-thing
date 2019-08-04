@@ -4,12 +4,21 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import prometheus from 'express-prom-bundle';
 
+const pino: any = require('express-pino-logger');
+
 import {healthcheck} from './controllers/healthcheck';
 import {listEvents} from './controllers/events';
 
 export const app = express();
 
 app.set("port", process.env.PORT || 8080);
+
+app.use(pino({
+  prettyPrint: {
+    colorize: true,
+    levelFirst: false,
+  },
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
