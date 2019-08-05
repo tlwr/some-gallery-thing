@@ -2,7 +2,7 @@ import moment from 'moment';
 import nock from 'nock';
 
 import {Gallery, GalleryEvent} from '../types';
-import {testable as t, collector} from './dulwich-picture-gallery';
+import {testable as t, collect} from './dulwich-picture-gallery';
 
 describe('scraping', () => {
   let nockDulwich: nock.Scope;
@@ -324,7 +324,7 @@ describe('collector', () => {
       .reply(200, rawHTML);
     ;
 
-    const events = await collector();
+    const events = await collect();
 
     expect(events.length).toBe(3);
 
@@ -359,7 +359,7 @@ describe('collector', () => {
       .reply(404);
     ;
 
-    await expect(collector()).rejects.toThrow(/404/);
+    await expect(collect()).rejects.toThrow(/404/);
   });
 
   it('should fail gracefully when malformed', async () => {
@@ -368,6 +368,6 @@ describe('collector', () => {
       .reply(200, 'malformed response');
     ;
 
-    await expect(collector()).rejects.toThrow(/Zero events collected/);
+    await expect(collect()).rejects.toThrow(/Zero events collected/);
   });
 });

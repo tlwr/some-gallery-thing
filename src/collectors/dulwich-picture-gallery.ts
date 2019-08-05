@@ -58,7 +58,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
   return events;
 };
 
-export const collector = async (): Promise<ReadonlyArray<GalleryEvent>> => {
+export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
   const rawEvents = await getEventsAsRawHTML();
   const parsedEvents = parseEvents(rawEvents);
   return parsedEvents;
