@@ -17,3 +17,7 @@ export interface GalleryEvent {
 
   image?: string;
 }
+
+export interface GalleryCollector {
+  collect(): Promise<ReadonlyArray<GalleryEvent>>
+}
