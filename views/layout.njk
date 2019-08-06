@@ -1,4 +1,7 @@
-<!doctype html>
+
+<!DOCTYPE html>
+<html lang="en">
+
 <html>
   <head>
     <title>some gallery thing</title>
@@ -6,15 +9,19 @@
 
 
     <link rel="stylesheet" href="css/tachyons.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/main.css"/>
   </head>
 
   <body>
     <header>
-      <h1 class="f3 fw4 pa3 mv0">some gallery thing</h1>
+
+      <h1 class="f-headline lh-solid">foo some gallery thing</h1>
     </header>
-    <main class="fl w-100 pa2">
+
+    <main>
       {% block content %}{% endblock %}
     </main>
   </body>
+
 </html>
