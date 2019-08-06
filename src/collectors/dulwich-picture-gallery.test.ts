@@ -4,42 +4,6 @@ import nock from 'nock';
 import {Gallery, GalleryEvent} from '../types';
 import {testable as t, collect} from './dulwich-picture-gallery';
 
-describe('scraping', () => {
-  let nockDulwich: nock.Scope;
-
-  beforeEach(() => {
-    nock.cleanAll();
-
-    nockDulwich = nock('https://www.dulwichpicturegallery.org.uk');
-  });
-
-  afterEach(() => {
-    nockDulwich.done();
-
-    nock.cleanAll();
-  });
-
-  it('should scrape events correctly', async () => {
-    nockDulwich
-      .get(/WhatsOnPage/)
-      .reply(200, 'a response');
-    ;
-
-    const response = await t.getEventsAsRawHTML();
-
-    expect(response).toEqual('a response');
-  });
-
-  it('should fail gracefully when not OK', async () => {
-    nockDulwich
-      .get(/WhatsOnPage/)
-      .reply(404);
-    ;
-
-    await expect(t.getEventsAsRawHTML()).rejects.toThrow(/404/);
-  });
-});
-
 describe('parsing', () => {
   it('should parse events correctly', async () => {
     const rawHTML = `

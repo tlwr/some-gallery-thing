@@ -10,19 +10,6 @@ const gallery: Gallery = {
   website: 'https://www.dulwichpicturegallery.org.uk',
 };
 
-const getEventsAsRawHTML = async (): Promise<string> => {
-  const opts = {
-    url: 'https://www.dulwichpicturegallery.org.uk/umbraco/surface/WhatsOnPage/GetEvents?category=43986&date=7d&PageId=43985&page=1',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest',
-    },
-    resolveWithFullResponse: true,
-  };
-
-  const response = await request(opts);
-  return response.body;
-};
-
 const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
   const html = cheerio.load(rawEvents);
 
@@ -59,11 +46,21 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
 };
 
 export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
-  const rawEvents = await getEventsAsRawHTML();
+  const opts = {
+    url: 'https://www.dulwichpicturegallery.org.uk/umbraco/surface/WhatsOnPage/GetEvents?category=43986&date=7d&PageId=43985&page=1',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+    resolveWithFullResponse: true,
+  };
+
+  const response = await request(opts);
+  const rawEvents = response.body;
   const parsedEvents = parseEvents(rawEvents);
+
   return parsedEvents;
 };
 
 export const testable = {
-  getEventsAsRawHTML, parseEvents,
+  parseEvents,
 };
