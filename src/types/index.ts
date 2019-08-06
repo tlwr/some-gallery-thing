@@ -10,7 +10,7 @@ export interface GalleryEvent {
   title: string;
   website?: string;
 
-  openDate: Date;
+  openDate?: Date;
   closeDate: Date;
 
   gallery: Gallery;
