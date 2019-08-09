@@ -106,25 +106,71 @@ describe('collector', () => {
       const title = !! event.title.match(/The Colour Palace/);
       const openDate = moment('2019-06-12').isSame(event.openDate);
       const closeDate = moment('2019-09-22').isSame(event.closeDate);
+      const image = event.image === 'https://www.dulwichpicturegallery.org.uk/media/10434/new-pav-thumbnail.jpg';
 
-      return title && openDate && closeDate;
+      return title && openDate && closeDate && image;
     })).toBe(true);
 
     expect(events.some((event: GalleryEvent): boolean => {
       const title = !! event.title.match(/Modernist British Printmaking/);
       const openDate = moment('2019-06-19').isSame(event.openDate);
       const closeDate = moment('2019-09-08').isSame(event.closeDate);
+      const image = event.image === 'https://www.dulwichpicturegallery.org.uk/media/9194/tube-train-power-thumb.jpg';
 
-      return title && openDate && closeDate;
+      return title && openDate && closeDate && image;
     })).toBe(true);
 
     expect(events.some((event: GalleryEvent): boolean => {
       const title = !! event.title.match(/Nahoko Kojima: Sumi/);
       const openDate = moment('2019-06-19').isSame(event.openDate);
       const closeDate = moment('2019-09-08').isSame(event.closeDate);
+      const image = event.image === 'https://www.dulwichpicturegallery.org.uk/media/10430/sumi-thumb.jpg';
 
-      return title && openDate && closeDate;
+      return title && openDate && closeDate && image;
     })).toBe(true);
+  });
+
+  it('should parse an event correctly even when an image is not present', async () => {
+    const rawHTML = `
+    <div class="list-inner-container" data-page-count="1" data-is-more-after-current-page="true">
+      <div class="stack-article grid-nest-1234">
+        <div class="block-tag"><p>Exhibitions</p></div>
+        <a href="/whats-on/exhibitions/2019/may/dulwich-pavilion-2019-the-colour-palace/">
+        </a>
+        <div class="stack-article-content">
+          <h2>
+            <a href="/whats-on/exhibitions/2019/may/dulwich-pavilion-2019-the-colour-palace/">
+              Dulwich Pavilion 2019: The Colour Palace
+            </a>
+          </h2>
+          <div class="date">
+            <time datetime="2019-06-12">12 Jun 2019</time>
+            <time datetime="2019-09-22">22 Sep 2019</time>
+          </div>
+          <nav>
+            <a href="/whats-on/exhibitions/2019/may/dulwich-pavilion-2019-the-colour-palace/" class="more-info">
+              More info
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>`;
+
+    nockDulwich
+      .get(/WhatsOnPage/)
+      .reply(200, rawHTML);
+    ;
+
+    const events = await collect();
+
+    expect(events.length).toBe(1);
+
+    const event = events[0];
+
+    expect(event.title).toMatch(/The Colour Palace/);
+    expect(moment('2019-06-12').isSame(event.openDate)).toBe(true);
+    expect(moment('2019-09-22').isSame(event.closeDate)).toBe(true);
+    expect(event.image).toEqual(undefined);
   });
 
   it('should throw an error when there are too many dates', async () => {

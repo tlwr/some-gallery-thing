@@ -10,7 +10,7 @@ const gallery: Gallery = {
   website: 'https://www.dulwichpicturegallery.org.uk',
 };
 
-const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
+const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryEvent> => {
   const html = cheerio.load(rawEvents);
 
   const eventDefs = html('div.stack-article.grid-nest-1234');
@@ -30,12 +30,21 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
 
     if (times.length !== 2) {
       throw new Error('Wrong number of dates found');
-  }
+    }
 
     const openDate = moment(times.first().attr('datetime')).toDate();
     const closeDate = moment(times.last().attr('datetime')).toDate();
 
-    events = [{title, openDate, closeDate, gallery}, ...events];
+    const event:GalleryEvent = {
+      title, openDate, closeDate, gallery
+    };
+
+    const image = loadedElem('img').attr('src');
+    if (typeof image !== 'undefined') {
+      event.image = `${baseURL}${image}`;
+    }
+
+    events = [event, ...events];
   }).toArray();
 
   if (events.length === 0) {
@@ -46,8 +55,10 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
 };
 
 export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
+  const baseURL = 'https://www.dulwichpicturegallery.org.uk';
+
   const opts = {
-    url: 'https://www.dulwichpicturegallery.org.uk/umbraco/surface/WhatsOnPage/GetEvents?category=43986&date=7d&PageId=43985&page=1',
+    url: `${baseURL}/umbraco/surface/WhatsOnPage/GetEvents?category=43986&date=7d&PageId=43985&page=1`,
     headers: {
       'X-Requested-With': 'XMLHttpRequest',
     },
@@ -56,7 +67,7 @@ export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
 
   const response = await request(opts);
   const rawEvents = response.body;
-  const parsedEvents = parseEvents(rawEvents);
+  const parsedEvents = parseEvents(rawEvents, baseURL);
 
   return parsedEvents;
 };
