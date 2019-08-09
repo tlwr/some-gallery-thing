@@ -69,7 +69,3 @@ export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
 
   return parsedEvents;
 };
-
-export const testable = {
-  parseEvents,
-};
