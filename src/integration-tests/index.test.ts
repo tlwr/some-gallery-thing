@@ -25,5 +25,13 @@ describe('integration-tests', () => {
         events.filter(e => e.gallery.name.match(/tate britain/i)).length,
       ).toBeGreaterThan(0)
     });
+
+    it('should collect events from White Cube', async () => {
+      const events = await collectors.WhiteCube();
+
+      console.info(events);
+
+      expect(events.length).toBeGreaterThan(0);
+    });
   });
 });
