@@ -1,0 +1,21 @@
+name: integration
+
+on:
+  push:
+    branches: [master]
+
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build-and-integration-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 'lts'
+
+      - run: npm install
+
+      - run: npm run test:integration
