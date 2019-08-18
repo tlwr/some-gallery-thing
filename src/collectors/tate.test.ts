@@ -1,7 +1,7 @@
 import moment from 'moment';
 import nock from 'nock';
 
-import {Gallery, GalleryEvent} from '../types';
+import {GalleryEvent} from '../types';
 import {collect} from './tate';
 
 describe('collector', () => {

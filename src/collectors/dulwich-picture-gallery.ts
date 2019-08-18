@@ -35,7 +35,7 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
     const openDate = moment(times.first().attr('datetime')).toDate();
     const closeDate = moment(times.last().attr('datetime')).toDate();
 
-    const event:GalleryEvent = {
+    const event: GalleryEvent = {
       title, openDate, closeDate, gallery
     };
 

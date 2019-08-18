@@ -1,6 +1,7 @@
 import lodash from 'lodash';
 
 import {exampleEvents} from '../data/events';
+import {GalleryEvent} from '../types';
 
 import {collect as dpg} from './dulwich-picture-gallery';
 import {collect as tate} from './tate';
@@ -11,9 +12,11 @@ export default {
   Tate: tate,
   WhiteCube: whiteCube,
 
-  Stub: () => Promise.resolve(exampleEvents),
+  Stub: async (): Promise<ReadonlyArray<GalleryEvent>> => {
+    return Promise.resolve(exampleEvents);
+  },
 
-  All: async () => {
+  All: async (): Promise<ReadonlyArray<GalleryEvent>> => {
     const allEvents = await Promise
       .all([
         dpg(),

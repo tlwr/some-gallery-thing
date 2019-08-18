@@ -19,5 +19,5 @@ export interface GalleryEvent {
 }
 
 export interface GalleryCollector {
-  collect(): Promise<ReadonlyArray<GalleryEvent>>
+  collect(): Promise<ReadonlyArray<GalleryEvent>>;
 }

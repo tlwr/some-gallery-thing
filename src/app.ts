@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import prometheus from 'express-prom-bundle';
 
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-var-requires
 const pino: any = require('express-pino-logger');
 
 import {healthcheck} from './controllers/healthcheck';
