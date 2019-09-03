@@ -5,13 +5,20 @@
   "main": "index.js",
   "scripts": {
     "start": "export NODE_ENV=${NODE_ENV:-development} && npm run serve",
+
     "test": "export NODE_ENV=test && jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
     "test:integration": "export NODE_ENV=test && jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
+
     "build": "npm run build:sass && npm run build:ts",
     "build:sass": "node-sass src/public/css/main.scss dist/public/css/main.css",
     "build:ts": "tsc",
-    "lint": "eslint src/*.* src/**/*.*",
+
+    "lint": "npm run lint:ts && npm run lint:css",
+    "lint:ts": "eslint src/*.* src/**/*.*",
+    "lint:css": "sass-lint src/**/*.scss --verbose --max-warnings 0",
+
     "serve": "npm run build && node dist/server.js",
+
     "watch": "export NODE_ENV=development && npm run watch:all",
     "watch:all": "npm run build:sass && concurrently -k -p \"[{name}]\" -n \"CSS,TS,JS\" \"npm run watch:sass\" \"npm run watch:ts\" \"npm run watch:node\"",
     "watch:node": "nodemon dist/server.js",
@@ -61,6 +68,7 @@
     "nock": "^10.0.6",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
+    "sass-lint": "^1.13.1",
     "supertest": "^4.0.2",
     "tachyons": "^4.11.1",
     "ts-jest": "^24.0.2",
