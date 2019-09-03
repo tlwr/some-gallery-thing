@@ -2,11 +2,12 @@
 
 {% block content %}
 
-  <article class="bl br bw2 b--white">
+  <article class="wrapper">
    
         {% for event in events %}
-        <div class="h-auto bb bw2 b--white pa2">
+        <div class="h-auto pa2 ba bw2 b--white ">
           <a class="link dim" href="{{ event.website or event.gallery.website }}">
+            
             {% if event.image %}
               <img src="{{ event.image }}" class="h3"/>
             {% endif %}

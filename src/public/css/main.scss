@@ -9,6 +9,7 @@ body {
   font-weight: 700;
   background-color: #0b0b0b;
   color: #fff;
+
 }
 
 h1, h2, h3, p {
@@ -27,6 +28,6 @@ footer a {
 }
 
 .header, .footer {
-  grid-column: 1 / -1;
-  clear: both;
+  max-width: 1050px;
+  margin: auto;
 }
