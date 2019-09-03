@@ -2,27 +2,29 @@
 
 {% block content %}
 
-  <article>
-    <h2 class="">Events</h2>
-    <div class="cf pa2">
-      <div class="">
+  <article class="ba bw3 b--white">
+    <div class="">
         {% for event in events %}
-        <a class="dim"
+        <a class="link dim"
            href="{{ event.website or event.gallery.website }}">
            {% if event.image %}
             <img src="{{ event.image }}" class="h4"/>
            {% endif %}
           <dl class="">
-            <dd class="white-90">{{ event.title }}</dd>
-            <dd class="hot-pink">{{ event.gallery.name }}</dd>
+            <dd class="hot-pink ttu f6">
+              {{ event.gallery.name }}
+            </dd>
+            <dd class="white-90 f2">
+              {{ event.title }}
+            </dd>
           </dl>
         </a>
         {% endfor %}
-      </div>
     </div>
+  </article>
 
-  <div class="w-100 overflow-scroll">
+  <!-- <div class="w-100 overflow-scroll">
     <code class="code pre f6 dib pa2 bg-black-80 white-90">{{ events | dump(2) }}</code>
-  </div>
+  </div> -->
 
 {% endblock %}

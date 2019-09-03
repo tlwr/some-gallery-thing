@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/tachyons.min.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css"/>
   </head>
   
   <body>
     <div class="wrapper">
-      <header class="header">
-        <h1 class="">some gallery thing</h1>
+      <header class="header bl br bw3 b--white">
+        <h1 class="f-5 tc ttu mv0">some gallery thing</h1>
       </header>
       <main class="content">
         {% block content %}{% endblock %}
       </main>
+      <footer class="footer bl br bw3 b--white ph3">
+        <p class="fl">website by <a href="">sonia turcotte</a> and <a href="">tlwr</a></p>
+        <p class="fr"><a href="">instagram</a></p>
+      </header>
     </div>
   </body>
 
