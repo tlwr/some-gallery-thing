@@ -4,12 +4,15 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import prometheus from 'express-prom-bundle';
 
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-var-requires
 const pino: any = require('express-pino-logger');
 
 import {healthcheck} from './controllers/healthcheck';
 import {listEvents} from './controllers/events';
+
+// istanbul ignore next
+// Do not cache assets during development
+const maxAge = process.env.NODE_ENV === 'production' ? '15m' : 0;
 
 export const app = express();
 
@@ -46,18 +49,14 @@ nunjucks.configure(
 app.use(
   express.static(
     path.join(__dirname, 'public'),
-    {
-      maxAge: 60 * 60 * 24,
-    },
+    { maxAge },
   )
 );
 
 app.use(
   express.static(
     path.join(__dirname, '..', 'node_modules', 'tachyons'),
-    {
-      maxAge: 60 * 60 * 24,
-    },
+    { maxAge },
   )
 );
 
