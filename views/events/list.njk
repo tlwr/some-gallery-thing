@@ -5,8 +5,8 @@
   <article class="wrapper">
    
         {% for event in events %}
-        <div class="pa3 event-box">
-          <a class="link dim" href="{{ event.website or event.gallery.website }}">
+        <div class="pa3 event-box dim pointer">
+          <a class="link" href="{{ event.website or event.gallery.website }}">
             
             {% if event.image %}
               <img src="{{ event.image }}" class="h3 lr"/>
