@@ -5,11 +5,11 @@
   <article class="wrapper">
    
         {% for event in events %}
-        <div class="h-auto pa2 ba bw2 b--white ">
+        <div class="pa3 event-box">
           <a class="link dim" href="{{ event.website or event.gallery.website }}">
             
             {% if event.image %}
-              <img src="{{ event.image }}" class="h3"/>
+              <img src="{{ event.image }}" class="h3 lr"/>
             {% endif %}
             
             <h2 class="hot-pink ttu f6 mb3">
