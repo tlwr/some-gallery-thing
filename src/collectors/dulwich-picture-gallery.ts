@@ -47,10 +47,6 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
     events = [event, ...events];
   }).toArray();
 
-  if (events.length === 0) {
-    throw new Error(`Zero events collected for ${gallery.name}`);
-  }
-
   return events;
 };
 

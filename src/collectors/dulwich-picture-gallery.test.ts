@@ -288,6 +288,8 @@ describe('collector', () => {
       .reply(200, 'malformed response');
     ;
 
-    await expect(collect()).rejects.toThrow(/Zero events collected/);
+    const events = await collect();
+
+    expect(events.length).toBe(0);
   });
 });

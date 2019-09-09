@@ -61,10 +61,6 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
     events = [event, ...events];
   });
 
-  if (events.length === 0) {
-    throw new Error(`Zero events collected for White Cube`);
-  }
-
   return events;
 };
 
