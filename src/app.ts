@@ -37,28 +37,33 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(prometheus({ includeMethod: true }));
 
-nunjucks.configure(
-  path.join(__dirname, '..', 'views'),
-  {
-    autoescape: true,
-    express: app,
-    noCache: process.env.NODE_ENV !== 'production',
-  },
-);
+// istanbul ignore next
+{
+  if (process.env.NODE_ENV !== 'compiled') {
+    nunjucks.configure(
+      path.join(__dirname, '..', 'views'),
+      {
+        autoescape: true,
+        express: app,
+        noCache: process.env.NODE_ENV !== 'production',
+      },
+    );
+  }
 
-app.use(
-  express.static(
-    path.join(__dirname, 'public'),
-    { maxAge },
-  )
-);
+    app.use(
+      express.static(
+        path.join(__dirname, 'public'),
+        { maxAge },
+      )
+    );
 
-app.use(
-  express.static(
-    path.join(__dirname, '..', 'node_modules', 'tachyons'),
-    { maxAge },
-  )
-);
+    app.use(
+      express.static(
+        path.join(__dirname, '..', 'node_modules', 'tachyons'),
+        { maxAge },
+      )
+    );
+}
 
 app.get('/healthcheck', healthcheck);
 app.get('/events', listEvents);
