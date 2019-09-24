@@ -2,10 +2,10 @@
 
 {% block content %}
 
-  <article class="flex flex-wrap bg-animate">
+  <article class="flex flex-wrap bg-animate outline">
    
         {% for event in events %}
-        <div class="fl w-100 w-50-ns pa3 event-box relative bg-animate hover-bg-near-black">
+        <div class="fl w-100 w-50-ns pa3 outline event-box relative bg-animate hover-bg-near-black">
           <a class="link" href="{{ event.website or event.gallery.website }}">
             
             {% if event.image %}
