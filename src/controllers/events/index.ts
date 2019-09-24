@@ -1,6 +1,6 @@
-import express from 'express';
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
+import { Request, Response } from "node-fetch";
 
 import {exampleEvents} from '../../data/events';
 import collectors from '../../collectors';
@@ -10,9 +10,8 @@ import {isProduction} from '../../utils';
 import { GalleryEventsComponent } from "../../components";
 
 export const listEvents = async (
-  _req: express.Request,
-  res: express.Response,
-) => {
+  _req: Request,
+): Promise<Response> => {
 
   const events = isProduction()
     ? /* istanbul ignore next */ await collectors.All()
@@ -22,5 +21,9 @@ export const listEvents = async (
     React.createElement(GalleryEventsComponent, {events})
   )}`;
 
-  res.send(responseBody)
+  return new Response(
+    responseBody, {
+      headers: { 'Content-Type': 'text/html' },
+    },
+  );
 };
