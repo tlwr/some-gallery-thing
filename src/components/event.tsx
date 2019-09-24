@@ -12,10 +12,11 @@ export class GalleryEventComponent extends React.Component<IGalleryEventComponen
       <a className="db center mw5 black link dim"
          href="{event.website || event.gallery.website}">
 
-         if (event.image) {
-          <img src={this.props.event.image}
-               className="w-100 db outline black-10"/>
-         }
+        {
+          this.props.event.image
+          ? <img src={this.props.event.image} className="w-100 db outline black-10"/>
+          : ''
+        }
         <dl className="mt2 f6">
           <dd className="ml0 fw9">{this.props.event.title}</dd>
           <dd className="ml0 gray">{this.props.event.gallery.name}</dd>

@@ -7,18 +7,37 @@ const commonConfig = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        loader: [
+          'css-loader',
+        ],
+      },
+      {
+        include: path.join(__dirname, 'src/css'),
+        test: /\.scss$/,
+        loader: [
+          'css-to-string-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
-      }
-    ]
+      },
+    ],
   },
 
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', '.jsx' ]
+    extensions: [
+      '.tsx', '.ts',
+      '.jsx', '.js',
+      '.scss', '.css',
+    ]
   },
 
-  target: "node",
+  target: 'node',
 
   plugins: [],
 };

@@ -13,9 +13,8 @@ export class GalleryEventsComponent extends React.Component<IGalleryEventsCompon
       <head>
         <title>some gallery thing</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="css/tachyons.min.css"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
       </head>
       <body className="pa4">
         <header className="mb5">
