@@ -9,6 +9,7 @@ body {
   font-weight: 700;
   background-color: #0b0b0b;
   color: #fff;
+  max-width: 67rem;
 
 }
 
@@ -20,8 +21,14 @@ footer a {
   color: #fff;
 }
 
-.wrapper, .header, .footer, .event-box {
+.header, .footer {
+  outline: 4px solid #fff;
+  outline-offset: -2px;
+  margin-bottom: 2px;
+}
+
+.event-box {
+  height: 10rem;
   outline: 4px solid #fff;
   outline-offset: -2px;
 }
-

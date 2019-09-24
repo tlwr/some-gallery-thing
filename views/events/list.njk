@@ -2,23 +2,23 @@
 
 {% block content %}
 
-  <article class="wrapper">
+  <article class="flex flex-wrap bg-animate">
    
         {% for event in events %}
-        <div class="pa3 event-box dim pointer">
+        <div class="fl w-100 w-50-ns pa3 event-box relative bg-animate hover-bg-near-black">
           <a class="link" href="{{ event.website or event.gallery.website }}">
             
             {% if event.image %}
-              <img src="{{ event.image }}" class="h3 lr"/>
+              <img src="{{ event.image }}" class=" absolute right-2 bottom-2 h3 o-70"/>
             {% endif %}
             
-            <h2 class="hot-pink ttu f6 mb3">
+            <h2 class="hot-pink ttu fl f6 mb3">
               {{ event.gallery.name }}
             </h2>
-            <h2 class="hot-pink ttu f6 mb3">
+            <h2 class="hot-pink ttu fr f6 mb3">
               exhibition-date
             </h2>
-            <h3 class="white-90 f2">
+            <h3 class="white-90 f2 absolute bottom-1 pr4 underline-hover">
               {{ event.title }}
             </h3>
   
