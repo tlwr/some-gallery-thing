@@ -15,7 +15,7 @@ export const listEvents = async (
 ) => {
 
   const events = isProduction()
-    ? await collectors.All()
+    ? /* istanbul ignore next */ await collectors.All()
     : await collectors.Stub();
 
   const responseBody = `<!DOCTYPE HTML>${ReactDOM.renderToString(

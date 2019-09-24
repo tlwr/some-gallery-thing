@@ -43,6 +43,6 @@ export class GalleryEventsComponent extends React.Component<IGalleryEventsCompon
   }
 
   public renderEvents(events: ReadonlyArray<GalleryEvent>) {
-    return events.map(e => <GalleryEventComponent event={e}/>);
+    return events.map((e, i) => <GalleryEventComponent key={i} event={e}/>);
   }
 }

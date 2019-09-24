@@ -52,4 +52,17 @@ export const exampleEvents: ReadonlyArray<GalleryEvent> = [
 
     image: 'https://www.dulwichpicturegallery.org.uk/media/9413/tube-train-power-large-banner.jpg',
   },
+  {
+    title: 'An exhibition without an image',
+    website: 'https://www.art.gallery',
+
+    openDate: moment('2019-06-19').toDate(),
+    closeDate: moment('2019-10-08').toDate(),
+
+    gallery: {
+      name: 'Art Gallery Without Image',
+      address: 'Gallery Road, London SE21 7AD',
+      website: 'https://www.art.gallery',
+    },
+  },
 ];

@@ -18,4 +18,12 @@ describe('app', () => {
       .expect(/TYPE up gauge/)
     ;
   });
+
+  it('should serve css on /assets/main.css', async () => {
+    await request(app)
+      .get('/assets/main.css')
+      .expect(200)
+      .expect('Content-Type', /text.css/)
+    ;
+  });
 });

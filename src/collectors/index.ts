@@ -7,6 +7,7 @@ import {collect as dpg} from './dulwich-picture-gallery';
 import {collect as tate} from './tate';
 import {collect as whiteCube} from './white-cube';
 
+// istanbul ignore next
 export default {
   DulwichPictureGallery: dpg,
   Tate: tate,
