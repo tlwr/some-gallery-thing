@@ -20,24 +20,8 @@ footer a {
   color: #fff;
 }
 
-.wrapper {
-  max-width: 1050px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(200px);
+.wrapper, .header, .footer, .event-box {
   outline: 4px solid #fff;
   outline-offset: -2px;
 }
 
-.header, .footer {
-  max-width: 1050px;
-  margin: auto;
-  outline: 4px solid #fff;
-  outline-offset: -2px;
-}
-
-.event-box {
-  outline: 4px solid #fff;
-  outline-offset: -2px;	
-}
