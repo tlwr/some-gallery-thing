@@ -2,12 +2,12 @@ import * as React from "react";
 
 import { GalleryEvent } from '../types';
 
-export interface IGalleryEventComponentProps {
+export interface GalleryEventComponentProps {
   event: GalleryEvent;
 }
 
-export class GalleryEventComponent extends React.Component<IGalleryEventComponentProps, {}> {
-  public render() {
+export class GalleryEventComponent extends React.Component<GalleryEventComponentProps, {}> {
+  public render(): React.ReactElement {
     return <div>
       <a className="db center mw5 black link dim"
          href="{event.website || event.gallery.website}">

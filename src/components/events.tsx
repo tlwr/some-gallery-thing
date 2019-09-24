@@ -3,12 +3,12 @@ import * as React from "react";
 import { GalleryEvent } from '../types';
 import {GalleryEventComponent} from './event';
 
-export interface IGalleryEventsComponentProps {
+export interface GalleryEventsComponentProps {
   events: ReadonlyArray<GalleryEvent>;
 }
 
-export class GalleryEventsComponent extends React.Component<IGalleryEventsComponentProps, {}> {
-  public render() {
+export class GalleryEventsComponent extends React.Component<GalleryEventsComponentProps, {}> {
+  public render(): React.ReactElement {
     return <html lang="en">
       <head>
         <title>some gallery thing</title>
@@ -42,7 +42,7 @@ export class GalleryEventsComponent extends React.Component<IGalleryEventsCompon
     </html>;
   }
 
-  public renderEvents(events: ReadonlyArray<GalleryEvent>) {
+  public renderEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<React.ReactElement> {
     return events.map((e, i) => <GalleryEventComponent key={i} event={e}/>);
   }
 }

@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import path from 'path';
 import prometheus from 'express-prom-bundle';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-var-requires
@@ -10,10 +9,6 @@ import mainCSS from './css/main.scss';
 
 import {healthcheck} from './controllers/healthcheck';
 import {listEvents} from './controllers/events';
-
-// istanbul ignore next
-// Do not cache assets during development
-const maxAge = process.env.NODE_ENV === 'production' ? '15m' : 0;
 
 export const app = express();
 
