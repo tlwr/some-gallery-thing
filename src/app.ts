@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import prometheus from 'express-prom-bundle';
 import { Request, Response } from "node-fetch";
 
 
@@ -24,7 +23,6 @@ app.use(pino({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(prometheus({ includeMethod: true }));
 
 const collector = isProduction()
   ? /* istanbul ignore next */collectors.All
