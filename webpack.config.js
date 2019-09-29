@@ -37,8 +37,6 @@ const commonConfig = {
     ]
   },
 
-  target: 'node',
-
   plugins: [],
 };
 
@@ -51,17 +49,21 @@ const devConfig = {
     filename: 'dev.js',
     path: path.resolve(__dirname, 'dist')
   },
+
+  target: 'node',
 };
 
 const compiledConfig = {
   ...commonConfig,
 
-  entry: './src/server.ts',
+  entry: './src/worker.js',
 
   output: {
     filename: 'compiled.js',
     path: path.resolve(__dirname, 'dist')
-  }
+  },
+
+  target: 'web',
 };
 
 if (process.env.ENABLE_WATCH === 'true') {

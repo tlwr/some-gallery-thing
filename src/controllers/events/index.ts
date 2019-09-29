@@ -3,19 +3,17 @@ import * as ReactDOM from "react-dom/server";
 import { Request, Response } from "node-fetch";
 
 import {exampleEvents} from '../../data/events';
-import collectors from '../../collectors';
+import {GalleryCollector} from '../../types';
 
 import {isProduction} from '../../utils';
 
 import { GalleryEventsComponent } from "../../components";
 
 export const listEvents = async (
+  collector: GalleryCollector,
   _req: Request,
 ): Promise<Response> => {
-
-  const events = isProduction()
-    ? /* istanbul ignore next */ await collectors.All()
-    : await collectors.Stub();
+  const events = await collector.collect();
 
   const responseBody = `<!DOCTYPE HTML>${ReactDOM.renderToString(
     React.createElement(GalleryEventsComponent, {events})

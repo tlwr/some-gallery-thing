@@ -4,24 +4,31 @@ import {healthcheck} from '../healthcheck';
 import {listEvents} from '../events';
 import {css} from '../assets';
 
-export const app = async (
-  req: Request,
-): Promise<Response> => {
+import {GalleryCollector} from '../../types';
 
-  switch(new URL(req.url).pathname) {
-    case '/events':
-      return listEvents(req);
+export class AppController {
+  private collector: GalleryCollector;
 
-    case '/healthcheck':
-      return healthcheck(req);
-
-    case '/assets/main.css':
-      return css(req);
-
-    default:
-      return new Response('', {
-        status: 302,
-        headers: { 'Location': '/events' },
-      });
+  public constructor(collector: GalleryCollector) {
+    this.collector = collector;
   }
-};
+
+  public async handle(req: Request): Promise<Response> {
+    switch(new URL(req.url).pathname) {
+      case '/events':
+        return listEvents(this.collector, req);
+
+      case '/healthcheck':
+        return healthcheck(req);
+
+      case '/assets/main.css':
+        return css(req);
+
+      default:
+        return new Response('', {
+          status: 302,
+          headers: { 'Location': '/events' },
+        });
+    }
+  }
+}
