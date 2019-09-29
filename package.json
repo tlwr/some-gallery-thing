@@ -4,14 +4,13 @@
   "description": "a web application for finding galleries",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV=${NODE_ENV:-development} && npm run serve",
-    "test": "export NODE_ENV=test && jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
-    "test:integration": "export NODE_ENV=test && jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
-    "build": "export NODE_ENV=development && webpack --config webpack.config.js",
+    "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
+    "test:integration": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
+    "build": "NODE_ENV=${NODE_ENV:-development} webpack --config webpack.config.js",
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:ts": "eslint src/*.* src/**/*.*",
     "lint:css": "sass-lint src/**/*.scss --verbose --max-warnings 0",
-    "watch": "export NODE_ENV=development && ENABLE_WATCH=true webpack --config webpack.config.js"
+    "watch": "npm run build && NODE_ENV=${NODE_ENV:-development} ENABLE_WATCH=true webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
