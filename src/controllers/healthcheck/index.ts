@@ -1,7 +1,7 @@
 import { Request, Response } from "node-fetch";
 
-export const healthcheck = (
-  _req: Request,
-): Response => {
-  return new Response('OK', { headers: { 'Content-Type': 'text/plain' } });
-};
+export class HealthcheckController {
+  public async handle(req: Request): Promise<Response> {
+    return new Response('OK', { headers: { 'Content-Type': 'text/plain' } });
+  }
+}
