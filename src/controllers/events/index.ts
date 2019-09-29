@@ -9,19 +9,24 @@ import {isProduction} from '../../utils';
 
 import { GalleryEventsComponent } from "../../components";
 
-export const listEvents = async (
-  collector: GalleryCollector,
-  _req: Request,
-): Promise<Response> => {
-  const events = await collector.collect();
+export class EventsController {
+  private collector: GalleryCollector;
 
-  const responseBody = `<!DOCTYPE HTML>${ReactDOM.renderToString(
-    React.createElement(GalleryEventsComponent, {events})
-  )}`;
+  public constructor(collector: GalleryCollector) {
+    this.collector = collector;
+  }
 
-  return new Response(
-    responseBody, {
-      headers: { 'Content-Type': 'text/html' },
-    },
-  );
-};
+  public async handleListEvents(req: Request): Promise<Response> {
+    const events = await this.collector.collect();
+
+    const responseBody = `<!DOCTYPE HTML>${ReactDOM.renderToString(
+      React.createElement(GalleryEventsComponent, {events})
+    )}`;
+
+    return new Response(
+      responseBody, {
+        headers: { 'Content-Type': 'text/html' },
+      },
+    );
+  }
+}

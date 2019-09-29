@@ -1,22 +1,22 @@
 import { Request, Response } from "node-fetch";
 
 import {healthcheck} from '../healthcheck';
-import {listEvents} from '../events';
+import {EventsController} from '../events';
 import {css} from '../assets';
 
 import {GalleryCollector} from '../../types';
 
 export class AppController {
-  private collector: GalleryCollector;
+  private eventsController: EventsController;
 
   public constructor(collector: GalleryCollector) {
-    this.collector = collector;
+    this.eventsController = new EventsController(collector);
   }
 
   public async handle(req: Request): Promise<Response> {
     switch(new URL(req.url).pathname) {
       case '/events':
-        return listEvents(this.collector, req);
+        return this.eventsController.handleListEvents(req);
 
       case '/healthcheck':
         return healthcheck(req);
