@@ -2,8 +2,6 @@ const path = require('path');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const commonConfig = {
-  mode: process.env.NODE_ENV,
-
   module: {
     rules: [
       {
@@ -43,6 +41,8 @@ const commonConfig = {
 const devConfig = {
   ...commonConfig,
 
+  mode: process.env.NODE_ENV,
+
   entry: './src/server.ts',
 
   output: {
@@ -56,7 +56,9 @@ const devConfig = {
 const compiledConfig = {
   ...commonConfig,
 
-  entry: './src/worker.js',
+  mode: 'production',
+
+  entry: './src/worker.ts',
 
   output: {
     filename: 'compiled.js',
