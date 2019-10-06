@@ -4,6 +4,7 @@
   "description": "a web application for finding galleries",
   "main": "dist/compiled.js",
   "scripts": {
+    "publish": "wrangler publish",
     "stub-events-unless-exist": "test -e dist/events.json || echo '{\"events\":[]}' > dist/events.json",
     "scrape": "ts-node src/worker/generate-events-json.ts > dist/events.json",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
