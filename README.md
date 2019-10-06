@@ -17,7 +17,15 @@
 
 # deployment
 
-1. `wrangler publish`
+1. Manually using `wrangler publish`
+
+Or
+
+1. Push to master via GitHub actions
+
+Or
+
+1. Every two hours via GitHub actions
 
 # structure
 
