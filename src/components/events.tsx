@@ -32,12 +32,6 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
               </div>
             </div>
           </article>
-
-          <div className="w-100 overflow-scroll">
-            <code className="code pre f6 dib pa2 bg-black-80 white-90">
-              { JSON.stringify(this.props.events) }
-            </code>
-          </div>
         </main>
       </body>
     </html>;
