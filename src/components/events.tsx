@@ -17,7 +17,7 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
       </head>
-      <body className="pa4">
+      <body className="pa4 bg-yellow">
         <header className="mb5">
           <h1 className="ma0 f-headline lh-solid">some gallery thing</h1>
         </header>
