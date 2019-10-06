@@ -1,20 +1,32 @@
-import express from 'express';
+import * as React from "react";
+import * as ReactDOM from "react-dom/server";
+import { Request, Response } from "node-fetch";
 
 import {exampleEvents} from '../../data/events';
-import collectors from '../../collectors';
+import {GalleryCollector} from '../../types';
 
 import {isProduction} from '../../utils';
 
-export const listEvents = async (
-  _req: express.Request,
-  res: express.Response,
-) => {
+import { GalleryEventsComponent } from "../../components";
 
-  const events = isProduction()
-    ? await collectors.All()
-    : await collectors.Stub();
+export class EventsController {
+  private collector: GalleryCollector;
 
-  res.render('events/list.njk', {
-    events,
-  });
-};
+  public constructor(collector: GalleryCollector) {
+    this.collector = collector;
+  }
+
+  public async handleListEvents(req: Request): Promise<Response> {
+    const events = await this.collector.collect();
+
+    const responseBody = `<!DOCTYPE HTML>${ReactDOM.renderToString(
+      React.createElement(GalleryEventsComponent, {events})
+    )}`;
+
+    return new Response(
+      responseBody, {
+        headers: { 'Content-Type': 'text/html' },
+      },
+    );
+  }
+}

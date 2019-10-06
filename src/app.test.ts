@@ -11,11 +11,11 @@ describe('app', () => {
     ;
   });
 
-  it('should serve Prometheus metrics on /metrics', async () => {
+  it('should serve css on /assets/main.css', async () => {
     await request(app)
-      .get('/metrics')
+      .get('/assets/main.css')
       .expect(200)
-      .expect(/TYPE up gauge/)
+      .expect('Content-Type', /text.css/)
     ;
   });
 });

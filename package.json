@@ -2,28 +2,19 @@
   "name": "some-gallery-thing",
   "version": "1.0.0",
   "description": "a web application for finding galleries",
-  "main": "index.js",
+  "main": "dist/compiled.js",
   "scripts": {
-    "start": "export NODE_ENV=${NODE_ENV:-development} && npm run serve",
-
-    "test": "export NODE_ENV=test && jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
-    "test:integration": "export NODE_ENV=test && jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
-
-    "build": "npm run build:sass && npm run build:ts",
-    "build:sass": "node-sass src/public/css/main.scss dist/public/css/main.css",
-    "build:ts": "tsc",
-
+    "publish": "wrangler publish",
+    "stub-events-unless-exist": "test -e dist/events.json || echo '{\"events\":[]}' > dist/events.json",
+    "scrape": "ts-node src/worker/generate-events-json.ts > dist/events.json",
+    "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
+    "test:integration": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
+    "build": "npm run stub-events-unless-exist && NODE_ENV=${NODE_ENV:-development} webpack --config webpack.config.js",
+    "compile": "npm run scrape && NODE_ENV=compile webpack --config webpack.config.js",
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:ts": "eslint src/*.* src/**/*.*",
     "lint:css": "sass-lint src/**/*.scss --verbose --max-warnings 0",
-
-    "serve": "npm run build && node dist/server.js",
-
-    "watch": "export NODE_ENV=development && npm run watch:all",
-    "watch:all": "npm run build:sass && concurrently -k -p \"[{name}]\" -n \"CSS,TS,JS\" \"npm run watch:sass\" \"npm run watch:ts\" \"npm run watch:node\"",
-    "watch:node": "nodemon dist/server.js",
-    "watch:sass": "node-sass -w src/public/css/main.scss dist/public/css/main.css",
-    "watch:ts": "tsc -w"
+    "watch": "npm run stub-events-unless-exist && npm run build && NODE_ENV=${NODE_ENV:-development} ENABLE_WATCH=true webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -36,52 +27,66 @@
   },
   "homepage": "https://github.com/tlwr/some-gallery-thing#readme",
   "dependencies": {
-    "@types/lodash": "^4.14.136",
-    "cheerio": "^1.0.0-rc.3",
-    "express": "^4.17.1",
-    "express-pino-logger": "^4.0.0",
-    "express-prom-bundle": "^5.1.5",
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
-    "nunjucks": "^3.2.0",
-    "pino-pretty": "^3.2.0",
-    "prom-client": "^11.5.3",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
-  },
-  "devDependencies": {
+    "@cloudflare/wrangler": "^1.4.0",
     "@types/body-parser": "^1.17.0",
     "@types/cheerio": "^0.22.12",
     "@types/express": "^4.17.0",
     "@types/jest": "^24.0.16",
+    "@types/lodash": "^4.14.136",
     "@types/nock": "^10.0.3",
     "@types/node": "^12.6.9",
-    "@types/nunjucks": "^3.1.1",
+    "@types/node-fetch": "^2.5.2",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
     "@types/request": "^2.48.2",
     "@types/request-promise-native": "^1.0.16",
     "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
+    "cheerio": "^1.0.0-rc.3",
     "concurrently": "^4.1.0",
+    "css-loader": "^3.2.0",
+    "css-modules-typescript-loader": "^3.0.0",
+    "css-to-string-loader": "^0.1.3",
     "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "express": "^4.17.1",
+    "express-pino-logger": "^4.0.0",
+    "express-prom-bundle": "^5.1.5",
+    "extract-loader": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "nock": "^10.0.6",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
+    "nodemon-webpack-plugin": "^4.1.1",
+    "pino-pretty": "^3.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "sass": "^1.22.12",
     "sass-lint": "^1.13.1",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
     "supertest": "^4.0.2",
     "tachyons": "^4.11.1",
     "ts-jest": "^24.0.2",
+    "ts-loader": "^6.1.0",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.6.3",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
   },
   "jest": {
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/.+.njk",
-      "<rootDir>/config/",
-      "index.ts"
+      "<rootDir>/config/"
     ],
     "coverageThreshold": {
       "global": {
@@ -93,10 +98,12 @@
     },
     "moduleFileExtensions": [
       "js",
-      "ts"
+      "jsx",
+      "ts",
+      "tsx"
     ],
     "transform": {
-      "^.+\\.(ts)$": "ts-jest"
+      "^.+\\.(ts|tsx)$": "ts-jest"
     },
     "globals": {
       "ts-jest": {
@@ -105,6 +112,9 @@
     },
     "testMatch": [
       "<rootDir>/src/**/*.test.+(ts)"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(scss|css|less)$": "<rootDir>/.jest/identity-obj-proxy-esm.js"
+    }
   }
 }

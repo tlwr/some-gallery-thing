@@ -1,11 +1,7 @@
-import express from 'express';
+import { Request, Response } from "node-fetch";
 
-export const healthcheck = (
-  _req: express.Request,
-  res: express.Response,
-) => {
-  res
-    .status(200)
-    .send('OK')
-  ;
-};
+export class HealthcheckController {
+  public async handle(req: Request): Promise<Response> {
+    return new Response('OK', { headers: { 'Content-Type': 'text/plain' } });
+  }
+}

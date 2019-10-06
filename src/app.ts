@@ -1,68 +1,46 @@
 import express from 'express';
-import nunjucks from 'nunjucks'
 import bodyParser from 'body-parser';
-import path from 'path';
-import prometheus from 'express-prom-bundle';
+import { Request, Response } from "node-fetch";
+
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-var-requires
 const pino: any = require('express-pino-logger');
 
-import {healthcheck} from './controllers/healthcheck';
-import {listEvents} from './controllers/events';
-
-// istanbul ignore next
-// Do not cache assets during development
-const maxAge = process.env.NODE_ENV === 'production' ? '15m' : 0;
+import {AppController} from './controllers/app';
+import collectors from './collectors';
+import {isProduction} from './utils';
 
 export const app = express();
 
 app.set("port", process.env.PORT || 8080);
 
-// istanbul ignore next
-{
-  if (process.env.NODE_ENV === 'development') {
-    app.use(pino({
-      prettyPrint: {
-        colorize: true,
-        levelFirst: false,
-      },
-    }));
-  } else if (process.env.NODE_ENV === 'production') {
-    app.use(pino());
-  }
-}
+app.use(pino({
+  prettyPrint: {
+    colorize: true,
+    levelFirst: false,
+  },
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(prometheus({ includeMethod: true }));
+const collector = isProduction()
+  ? /* istanbul ignore next */collectors.All
+  : collectors.Stub;
 
-nunjucks.configure(
-  path.join(__dirname, '..', 'views'),
-  {
-    autoescape: true,
-    express: app,
-    noCache: process.env.NODE_ENV !== 'production',
-  },
-);
+const appController = new AppController(collector);
 
-app.use(
-  express.static(
-    path.join(__dirname, 'public'),
-    { maxAge },
-  )
-);
+app.get('/*', async (req: express.Request, res: express.Response) => {
+  const fullURL = req.protocol + '://' + req.get('host') + req.originalUrl;
 
-app.use(
-  express.static(
-    path.join(__dirname, '..', 'node_modules', 'tachyons'),
-    { maxAge },
-  )
-);
+  const response = await appController.handle(new Request(fullURL));
 
-app.get('/healthcheck', healthcheck);
-app.get('/events', listEvents);
+  for (const header in response.headers.raw()) {
+    res.set(header, response.headers.get(header));
+  }
+  res.set('Cache-Control', 'no-cache');
 
-app.get('/', (_req: express.Request, res: express.Response) => {
-  res.redirect('/events');
+  res.status(response.status)
+
+  res.send(await response.text());
 });

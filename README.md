@@ -15,6 +15,18 @@
 3. `npm run watch`
 4. open `localhost:8080`
 
+# deployment
+
+1. Manually using `wrangler publish`
+
+Or
+
+1. Push to master via GitHub actions
+
+Or
+
+1. Every two hours via GitHub actions
+
 # structure
 
 `views` is the directory where the `nunjucks` views go. `views/layout.njk` is
