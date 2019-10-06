@@ -4,14 +4,16 @@
   "description": "a web application for finding galleries",
   "main": "index.js",
   "scripts": {
+    "stub-events-unless-exist": "test -e dist/events.json || echo '{\"events\":[]}' > dist/events.json",
     "scrape": "ts-node src/worker/generate-events-json.ts > dist/events.json",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
     "test:integration": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
-    "build": "NODE_ENV=${NODE_ENV:-development} webpack --config webpack.config.js",
+    "build": "npm run stub-events-unless-exist && NODE_ENV=${NODE_ENV:-development} webpack --config webpack.config.js",
+    "compile": "npm run scrape && NODE_ENV=compile webpack --config webpack.config.js",
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:ts": "eslint src/*.* src/**/*.*",
     "lint:css": "sass-lint src/**/*.scss --verbose --max-warnings 0",
-    "watch": "npm run build && NODE_ENV=${NODE_ENV:-development} ENABLE_WATCH=true webpack --config webpack.config.js"
+    "watch": "npm run stub-events-unless-exist && npm run build && NODE_ENV=${NODE_ENV:-development} ENABLE_WATCH=true webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",

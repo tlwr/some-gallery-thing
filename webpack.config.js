@@ -41,7 +41,7 @@ const commonConfig = {
 const devConfig = {
   ...commonConfig,
 
-  mode: process.env.NODE_ENV,
+  mode: process.env.NODE_ENV === 'compile' ? 'production' : process.env.NODE_ENV,
 
   entry: './src/server.ts',
 
@@ -53,21 +53,6 @@ const devConfig = {
   target: 'node',
 };
 
-const compiledConfig = {
-  ...commonConfig,
-
-  mode: 'production',
-
-  entry: './src/worker/entrypoint.ts',
-
-  output: {
-    filename: 'compiled.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-
-  target: 'web',
-};
-
 if (process.env.ENABLE_WATCH === 'true') {
   devConfig.watch = process.env.ENABLE_WATCH === 'true';
 
@@ -77,8 +62,28 @@ if (process.env.ENABLE_WATCH === 'true') {
   }));
 }
 
+if (process.env.NODE_ENV === 'compile') {
+  const compiledConfig = {
+    ...commonConfig,
 
-module.exports = [
-  devConfig,
-  compiledConfig,
-];
+    mode: 'production',
+
+    entry: './src/worker/entrypoint.ts',
+
+    output: {
+      filename: 'compiled.js',
+      path: path.resolve(__dirname, 'dist')
+    },
+
+    target: 'web',
+  };
+
+  module.exports = [
+    devConfig,
+    compiledConfig,
+  ];
+} else {
+  module.exports = [
+    devConfig,
+  ];
+}
