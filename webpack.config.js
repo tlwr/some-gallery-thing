@@ -58,7 +58,7 @@ const compiledConfig = {
 
   mode: 'production',
 
-  entry: './src/worker.ts',
+  entry: './src/worker/entrypoint.ts',
 
   output: {
     filename: 'compiled.js',

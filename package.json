@@ -4,6 +4,7 @@
   "description": "a web application for finding galleries",
   "main": "index.js",
   "scripts": {
+    "scrape": "ts-node src/worker/generate-events-json.ts > dist/events.json",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests",
     "test:integration": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
     "build": "NODE_ENV=${NODE_ENV:-development} webpack --config webpack.config.js",
