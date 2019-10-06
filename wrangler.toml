@@ -1,0 +1,11 @@
+name = "some-gallery-thing"
+type = "javascript"
+
+account_id = "be58262db1dd9a9c0c24c687ffce7ba4"
+zone_id = "eaa1b3a7df59f08b9e8e4c50e5a95809"
+
+route = "some-gallery-thing.toby.codes/*"
+workers_dev = false
+
+[env.staging]
+workers_dev = true

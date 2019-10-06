@@ -15,6 +15,10 @@
 3. `npm run watch`
 4. open `localhost:8080`
 
+# deployment
+
+1. `wrangler publish`
+
 # structure
 
 `views` is the directory where the `nunjucks` views go. `views/layout.njk` is
