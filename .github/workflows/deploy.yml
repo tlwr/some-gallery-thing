@@ -8,7 +8,7 @@ on:
     - cron: '0 */2 * * *'
 
 jobs:
-  build-and-deploy:
+  build-test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
