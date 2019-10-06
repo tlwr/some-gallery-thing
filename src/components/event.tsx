@@ -6,11 +6,19 @@ export interface GalleryEventComponentProps {
   event: GalleryEvent;
 }
 
+export function link (galleryWebsite: string, eventWebsite?: string): string {
+  if (!eventWebsite) {
+    return galleryWebsite;
+  }
+
+  return eventWebsite;
+};
+
 export class GalleryEventComponent extends React.Component<GalleryEventComponentProps, {}> {
   public render(): React.ReactElement {
     return <div>
       <a className="db center mw5 black link dim"
-         href="{event.website || event.gallery.website}">
+         href={link(this.props.event.gallery.website, this.props.event.website)}>
 
         {
           this.props.event.image
