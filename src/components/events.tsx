@@ -33,7 +33,6 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
   public renderEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<React.ReactElement> {
     return Array
       .from(events)
-      .sort((e1, e2) => e1.closeDate.getTime() - e2.closeDate.getTime())
       .map((e, i) => <GalleryEventComponent key={i} event={e}/>)
     ;
   }
