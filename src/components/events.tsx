@@ -17,20 +17,13 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
       </head>
-      <body className="pa4 bg-yellow">
-        <header className="mb5">
-          <h1 className="ma0 f-headline lh-solid">some gallery thing</h1>
+      <body>
+        <header>
+          <h1>some gallery thing</h1>
         </header>
         <main>
           <article>
-            <h2 className="f3 fw4 pa3 mv0">Events</h2>
-            <div className="cf pa2">
-              <div className="fl w-50 w-25-m w-20-l pa2">
-
-                {this.renderEvents(this.props.events)}
-
-              </div>
-            </div>
+            {this.renderEvents(this.props.events)}
           </article>
         </main>
       </body>
@@ -38,6 +31,10 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
   }
 
   public renderEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<React.ReactElement> {
-    return events.map((e, i) => <GalleryEventComponent key={i} event={e}/>);
+    return Array
+      .from(events)
+      .sort((e1, e2) => e1.closeDate.getTime() - e2.closeDate.getTime())
+      .map((e, i) => <GalleryEventComponent key={i} event={e}/>)
+    ;
   }
 }
