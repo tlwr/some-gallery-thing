@@ -1,4 +1,8 @@
-@import 'tachyons/css/tachyons.min';
+@import url('https://rsms.me/inter/inter.css');
+  html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
 
 $s-pink: #ff1493;
 $s-white: #fefefe;
@@ -91,9 +95,9 @@ main {
 @media screen and (min-width: 900px) {
   .event {
     margin-bottom: .5rem;
-    width: calc(33% - (.5rem / 3));
+    width: calc(50% - (.5rem / 2));
 
-    &:not(:nth-child(3n)) {
+    &:not(:nth-child(2n)) {
       margin-right: .5rem;
     }
   }
