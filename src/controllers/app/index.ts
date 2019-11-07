@@ -1,4 +1,5 @@
-import { Request, Response } from "node-fetch";
+import { Request, Response } from 'node-fetch';
+import { URL } from 'url';
 
 import {EventsController} from '../events';
 import {AssetsController} from '../assets';
