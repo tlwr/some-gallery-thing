@@ -29,11 +29,10 @@ Or
 
 # structure
 
-`views` is the directory where the `nunjucks` views go. `views/layout.njk` is
-the template for the entire site.
-
 `src` is where the rest of the source code goes. `src/public` is where assets
 (CSS and images) live.
+
+`src/controllers` is the directory where the visual components live.
 
 This project uses `typescript`, `jest`, and `sass`.
 
