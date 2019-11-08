@@ -26,6 +26,9 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
             {this.renderEvents(this.props.events)}
           </article>
         </main>
+        <footer>
+          <p>website by <a href="">sonia turcotte</a> and <a href="">tlwr</a></p>
+        </footer>
       </body>
     </html>;
   }
