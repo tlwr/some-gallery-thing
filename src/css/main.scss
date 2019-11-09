@@ -1,5 +1,7 @@
 @import url('https://rsms.me/inter/inter.css');
-  html { font-family: 'Inter', sans-serif; }
+
+html { font-family: 'Inter', sans-serif; }
+
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter var', sans-serif; }
 }
@@ -19,7 +21,6 @@ body {
   max-width: 960px;
 }
 
-/*Grid stuff*/
 
 .grid-container {
   display: grid;
@@ -27,7 +28,8 @@ body {
 
 }
 
-.header, .footer {
+.header,
+.footer {
   grid-column: 1 / -1;
 }
 
@@ -37,11 +39,10 @@ a {
 }
 
 header {
-  outline: 4px solid $s-white;
-  margin: 2px;
-  padding: .5rem;
   color: $s-white;
-
+  margin: 2px;
+  outline: 4px solid $s-white;
+  padding: .5rem;
 
   h1 {
     font-size: 4.1rem;
@@ -51,16 +52,16 @@ header {
 
 
 .event {
-  outline: 4px solid $s-white;
   color: $s-white;
   margin: 2px;
+  outline: 4px solid $s-white;
   padding: 1rem;
 
   img {
     filter: brightness(.75);
-    max-height:140px;
-    max-width: 100%;
     margin: .5rem;
+    max-height: 140px;
+    max-width: 100%;
   }
 
   .event-details {
@@ -71,27 +72,4 @@ header {
     }
 
   }
-
-  a {
-      text-decoration: none;
-    }
-
 }
-
-/*@media screen and (max-width: 500px) {
-  .event {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 500px) and (max-width: 900px) {
-  .event {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .event {
-    width: 50%;
-  }
-}*/
