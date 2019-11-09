@@ -33,6 +33,10 @@ body {
   grid-column: 1 / -1;
 }
 
+.footer {
+  padding: 0 1rem;
+}
+
 
 a {
   color: $s-white;
@@ -42,34 +46,63 @@ header {
   color: $s-white;
   margin: 2px;
   outline: 4px solid $s-white;
-  padding: .5rem;
+  padding: 1rem;
 
   h1 {
-    font-size: 4.1rem;
+    font-size: 5.12rem;
+    line-height: 1;
     margin: 0;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
 
 
 .event {
   color: $s-white;
+  height: 10rem;
   margin: 2px;
   outline: 4px solid $s-white;
   padding: 1rem;
+  position: relative;
+  text-decoration: none;
 
   img {
-    filter: brightness(.75);
-    margin: .5rem;
-    max-height: 140px;
+    bottom: 1rem;
+    filter: brightness(.6);
+    max-height: 8rem;
     max-width: 100%;
+    position: absolute;
+    right: 1rem;
   }
 
   .event-details {
 
     p {
+      color: $s-pink;
       display: inline;
-      padding-right: 20px;
+      font-size: .8rem;
+      line-height: 1.25;
+      text-transform: uppercase;
     }
 
+    h2 {
+      font-size: 2rem;
+      line-height: 1.25;
+      margin-top: 2rem;
+      position: absolute;
+    }
+
+    .close-date {
+      position: absolute;
+      right: 1rem;
+      top: 0;
+    }
+
+    .gallery {
+      position: absolute;
+      top: 0;
+      width: 50%;
+    }
   }
 }
