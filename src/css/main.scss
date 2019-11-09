@@ -19,13 +19,26 @@ body {
   max-width: 960px;
 }
 
+/*Grid stuff*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+}
+
+.header, .footer {
+  grid-column: 1 / -1;
+}
+
+
 a {
   color: $s-white;
 }
 
 header {
   outline: 4px solid $s-white;
-  margin-bottom: 4px;
+  margin: 2px;
   padding: .5rem;
   color: $s-white;
 
@@ -36,32 +49,21 @@ header {
   }
 }
 
-main {
-  article {
-    display: flex;
-
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  a {
-      text-decoration: none;
-    }
-}
 
 .event {
   outline: 4px solid $s-white;
   color: $s-white;
+  margin: 2px;
+  padding: 1rem;
 
   img {
-    filter: brightness(.66);
+    filter: brightness(.75);
     max-height:140px;
     max-width: 100%;
     margin: .5rem;
   }
 
   .event-details {
-    padding: .5rem;
 
     p {
       display: inline;
@@ -70,9 +72,13 @@ main {
 
   }
 
+  a {
+      text-decoration: none;
+    }
+
 }
 
-@media screen and (max-width: 500px) {
+/*@media screen and (max-width: 500px) {
   .event {
     width: 100%;
   }
@@ -88,4 +94,4 @@ main {
   .event {
     width: 50%;
   }
-}
+}*/
