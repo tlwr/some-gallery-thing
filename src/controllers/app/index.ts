@@ -1,5 +1,5 @@
 import { Request, Response } from 'node-fetch';
-import { URL } from 'url';
+import URI from 'urijs';
 
 import {EventsController} from '../events';
 import {AssetsController} from '../assets';
@@ -19,7 +19,7 @@ export class AppController {
   }
 
   public async handle(req: Request): Promise<Response> {
-    switch(new URL(req.url).pathname) {
+    switch(new URI(req.url).pathname()) {
       case '/events':
         return this.eventsController.handleListEvents(req);
 
