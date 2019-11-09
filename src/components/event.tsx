@@ -40,12 +40,16 @@ export function niceCloseDate(d: Date): string {
 
 export class GalleryEventComponent extends React.Component<GalleryEventComponentProps, {}> {
   public render(): React.ReactElement {
-    return <a className="event link dim"
+    return <a className="event"
               href={link(this.props.event.gallery.website, this.props.event.website)}>
-      <dl>
-        <dd>{this.props.event.title.toLowerCase()}</dd>
-        <dd>{this.props.event.gallery.name.toLowerCase()}</dd>
-      </dl>
+      <div className="event-details">  
+        <p>{this.props.event.gallery.name.toLowerCase()}</p>
+        <p>
+          {niceCloseDate(this.props.event.closeDate)}
+        </p>
+
+        <h2>{this.props.event.title.toLowerCase()}</h2>
+      </div>
 
       {
         this.props.event.image
@@ -53,9 +57,7 @@ export class GalleryEventComponent extends React.Component<GalleryEventComponent
         : ''
       }
 
-      <p>
-          {niceCloseDate(this.props.event.closeDate)}
-      </p>
+      
     </a>;
   }
 }

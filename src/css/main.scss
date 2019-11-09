@@ -1,4 +1,10 @@
-@import 'tachyons/css/tachyons.min';
+@import url('https://rsms.me/inter/inter.css'); // sass-lint:disable-line no-url-domains no-url-protocols
+
+html { font-family: 'Inter', sans-serif; }
+
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
 
 $s-pink: #ff1493;
 $s-white: #fefefe;
@@ -11,90 +17,59 @@ body {
 
 body {
   color: $s-white;
-
   margin: 0 auto;
   max-width: 960px;
 }
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+}
+
+.header,
+.footer {
+  grid-column: 1 / -1;
+}
+
 
 a {
   color: $s-white;
 }
 
 header {
-  background-color: $s-pink;
   color: $s-white;
-
-  margin: 0 0 .5rem;
-
+  margin: 2px;
+  outline: 4px solid $s-white;
   padding: .5rem;
-}
 
-main {
-  article {
-    display: flex;
-
-    flex-direction: row;
-    flex-wrap: wrap;
+  h1 {
+    font-size: 4.1rem;
+    margin: 0;
   }
 }
+
 
 .event {
-  background-color: $s-pink;
   color: $s-white;
-
-  display: flex;
-
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 2px;
+  outline: 4px solid $s-white;
+  padding: 1rem;
 
   img {
-    filter: brightness(.66);
-    margin: 0 .5rem .5rem;
-  }
-
-  dl {
-    margin: .5rem 0 0;
-
-    dd {
-      margin-bottom: .5rem;
-      margin-left: .5rem;
-
-      &:first-child {
-        font-weight: 700;
-      }
-    }
-  }
-
-  p {
+    filter: brightness(.75);
     margin: .5rem;
+    max-height: 140px;
+    max-width: 100%;
   }
-}
 
-@media screen and (max-width: 500px) {
-  .event {
-    margin: .5rem 0;
-    width: 100%;
-  }
-}
+  .event-details {
 
-@media screen and (min-width: 500px) and (max-width: 900px) {
-  .event {
-    margin-bottom: .5rem;
-    width: calc(50% - (.5rem / 2));
-
-    &:not(:nth-child(2n)) {
-      margin-right: .5rem;
+    p {
+      display: inline;
+      padding-right: 20px;
     }
-  }
-}
 
-@media screen and (min-width: 900px) {
-  .event {
-    margin-bottom: .5rem;
-    width: calc(33% - (.5rem / 3));
-
-    &:not(:nth-child(3n)) {
-      margin-right: .5rem;
-    }
   }
 }
