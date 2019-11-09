@@ -18,17 +18,18 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
         <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
       </head>
       <body>
-        <header>
-          <h1>some gallery thing</h1>
-        </header>
-        <main>
-          <article>
-            {this.renderEvents(this.props.events)}
-          </article>
-        </main>
-        <footer>
+        
+        <div className="grid-container">
+          <header className="header">
+            <h1>some gallery thing</h1>
+          </header>
+          
+          {this.renderEvents(this.props.events)}
+          <footer>
           <p>website by <a href="">sonia turcotte</a> and <a href="">tlwr</a></p>
         </footer>
+        </div>
+        
       </body>
     </html>;
   }
