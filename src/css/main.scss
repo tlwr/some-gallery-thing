@@ -90,19 +90,22 @@ header {
       font-size: 2rem;
       line-height: 1.25;
       margin-top: 2rem;
+      padding-right: .5rem;
       position: absolute;
     }
 
     .close-date {
       position: absolute;
       right: 1rem;
+      text-align: right;
       top: 0;
+      width: 40%;
     }
 
     .gallery {
       position: absolute;
       top: 0;
-      width: 50%;
+      width: 40%;
     }
   }
 }
