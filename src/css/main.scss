@@ -97,13 +97,15 @@ header {
     .close-date {
       position: absolute;
       right: 1rem;
+      text-align: right;
       top: 0;
+      width: 40%;
     }
 
     .gallery {
       position: absolute;
       top: 0;
-      width: 50%;
+      width: 40%;
     }
   }
 }
