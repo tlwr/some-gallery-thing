@@ -49,7 +49,7 @@ header {
   padding: 1rem;
 
   h1 {
-    font-size: 5.12rem;
+    font-size: 8.5vw;
     line-height: 1;
     margin: 0;
     text-align: center;
@@ -106,6 +106,38 @@ header {
       position: absolute;
       top: 0;
       width: 40%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 530px) {
+  .header {
+    h1 {
+      font-size: 8vw;
+    }
+  }
+
+  .event,
+  .event-details {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 530px) and (max-width: 794px) {
+  .header {
+    h1 {
+      font-size: 8.3vw;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .header {
+    h1 {
+      font-size: 5.14rem;
     }
   }
 }
