@@ -35,6 +35,21 @@ body {
 
 .footer {
   padding: 0 1rem;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    padding-right: 20px;
+
+    &:last-child {
+      float: right;
+      padding-right: 0;
+      }
+  }
 }
 
 
@@ -118,10 +133,14 @@ header {
     }
   }
 
-  .event,
-  .event-details {
-    h2 {
-      font-size: 1.5rem;
+  .footer {
+    li {
+      display: block;
+
+      &:last-child {
+        float: left;
+        padding-top: .5rem;
+      }
     }
   }
 }
