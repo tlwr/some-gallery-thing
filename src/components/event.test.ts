@@ -43,7 +43,7 @@ describe('GalleyEventComponent', () => {
       const until = niceCloseDate(nextWeek.toDate());
 
       expect(until).toBe(
-        `until ${nextWeek.format('DD/MM/YYYY')}`.toLowerCase(),
+        `until ${nextWeek.format('D MMM YYYY')}`.toLowerCase(),
       );
     });
   });
