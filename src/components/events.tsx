@@ -7,6 +7,14 @@ export interface GalleryEventsComponentProps {
   events: ReadonlyArray<GalleryEvent>;
 }
 
+export function sortEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<GalleryEvent> {
+  return Array
+    .from(events)
+    .sort((a, b) => {
+      return (new Date(a.closeDate).getTime()) - (new Date(b.closeDate).getTime());
+    });
+}
+
 export class GalleryEventsComponent extends React.Component<GalleryEventsComponentProps, {}> {
   public render(): React.ReactElement {
     return <html lang="en">
@@ -24,7 +32,8 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
             <h1>some gallery thing</h1>
           </header>
           
-          {this.renderEvents(this.props.events)}
+          {this.renderEvents(sortEvents(this.props.events))}
+
           <footer className="footer">
             <ul>
               <li>website by <a href="http://soniaturcotte.com/">sonia turcotte</a> and <a href="https://toby.codes/">tlwr</a></li>
