@@ -34,7 +34,6 @@ body {
 }
 
 .footer {
-  padding: 0 1rem;
 
   ul {
     list-style-type: none;
@@ -48,13 +47,41 @@ body {
     &:last-child {
       float: right;
       padding-right: 0;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        background-color: $s-pink;
+        color: $s-black;
       }
+    }
   }
 }
 
 
 a {
   color: $s-white;
+
+  &:hover {
+    background-color: darken($s-black, 5%);
+    cursor: pointer;
+
+    img {
+      filter: inherit;
+      transition: opacity .15s ease-in;
+      }
+    }
+
+  &:focus {
+    h2 {
+      color: $s-pink;
+     }
+
+    img {
+      filter: grayscale(100%);
+    }
+  }
 }
 
 header {
@@ -84,7 +111,7 @@ header {
 
   img {
     bottom: 1rem;
-    filter: brightness(.6);
+    filter: grayscale(100%) brightness(.6);
     max-height: 8rem;
     max-width: 100%;
     position: absolute;
