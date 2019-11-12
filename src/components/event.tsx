@@ -35,7 +35,7 @@ export function niceCloseDate(d: Date): string {
     return md.format('[until] dddd').toLowerCase();
   }
 
-  return md.format('[until] dddd YYYY/MM/DD').toLowerCase();
+  return md.format('[until] DD/MM/YYYY').toLowerCase();
 }
 
 export class GalleryEventComponent extends React.Component<GalleryEventComponentProps, {}> {
