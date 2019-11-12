@@ -163,6 +163,7 @@ header {
   .footer {
     li {
       display: block;
+      padding-left: 1rem;
 
       &:last-child {
         float: left;
@@ -172,10 +173,20 @@ header {
   }
 }
 
-@media screen and (min-width: 530px) and (max-width: 794px) {
+@media screen and (min-width: 530px) and (max-width: 960px) {
   .header {
     h1 {
       font-size: 8.3vw;
+    }
+  }
+
+  .footer {
+    li {
+      padding-left: 1rem;
+
+      &:last-child {
+        padding-right: 1rem;
+      }
     }
   }
 }
