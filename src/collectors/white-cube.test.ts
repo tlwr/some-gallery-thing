@@ -204,27 +204,27 @@ alt="top to bottom"></a></div>
 
     expect(events.length).toBe(2);
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/The Real: Three Propositions/);
-      const openDate = moment('2019-07-10').isSame(event.openDate);
-      const closeDate = moment('2019-08-25').isSame(event.closeDate);
-      const website = event.website === 'https://whitecube.com/exhibitions/exhibition/the_real_three_propositions_bermondsey_2019';
-      const image = event.image === 'https://whitecube.com/media/w800/Artists/the-real-three-propositions-bermondsey-2019.jpg';
-      const galleryName = event.gallery.name == 'White Cube Bermondsey';
+    expect(events).toMatchObject([{
+      title: 'Jeff Wall',
+      openDate: moment('2019-06-28').toDate(),
+      closeDate: moment('2019-09-07').toDate(),
+      website: 'https://whitecube.com/exhibitions/exhibition/jeff_wall_masons_yards_2019',
+      image: 'https://whitecube.com/media/w800/jeff-wall-white-cube-masons-yard-2019-13.jpg',
 
-      return title && openDate && closeDate && image && website && galleryName;
-    })).toBe(true);
+      gallery: {
+        name: `White Cube Mason's Yard`,
+      },
+    },{
+      title: 'The Real: Three Propositions',
+      openDate: moment('2019-07-10').toDate(),
+      closeDate: moment('2019-08-25').toDate(),
+      website: 'https://whitecube.com/exhibitions/exhibition/the_real_three_propositions_bermondsey_2019',
+      image: 'https://whitecube.com/media/w800/Artists/the-real-three-propositions-bermondsey-2019.jpg',
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Jeff Wall/);
-      const openDate = moment('2019-06-28').isSame(event.openDate);
-      const closeDate = moment('2019-09-07').isSame(event.closeDate);
-      const website = event.website === 'https://whitecube.com/exhibitions/exhibition/jeff_wall_masons_yards_2019';
-      const image = event.image === 'https://whitecube.com/media/w800/jeff-wall-white-cube-masons-yard-2019-13.jpg';
-      const galleryName = event.gallery.name == `White Cube Mason's Yard`;
-
-      return title && openDate && closeDate && image && website && galleryName;
-    })).toBe(true);
+      gallery: {
+        name: 'White Cube Bermondsey',
+      },
+    }]);
   });
 
 
