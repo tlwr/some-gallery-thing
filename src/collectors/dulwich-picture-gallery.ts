@@ -4,6 +4,8 @@ import request from 'request-promise-native';
 
 import {Gallery, GalleryEvent} from '../types';
 
+const dpgEventWebsitePrefix = 'https://www.dulwichpicturegallery.org.uk';
+
 const gallery: Gallery = {
   name: 'Dulwich Picture Gallery',
   address: 'Gallery Road, London SE21 7AD',
@@ -35,8 +37,14 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
     const openDate = moment(times.first().attr('datetime')).toDate();
     const closeDate = moment(times.last().attr('datetime')).toDate();
 
+    let website = loadedElem('a.more-info').first().attr('href');
+
+    if (typeof website !== 'undefined') {
+      website = `${dpgEventWebsitePrefix}${website.trim()}`
+    }
+
     const event: GalleryEvent = {
-      title, openDate, closeDate, gallery
+      title, openDate, closeDate, gallery, website
     };
 
     const image = loadedElem('img').attr('src');

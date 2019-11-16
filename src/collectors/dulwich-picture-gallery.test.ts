@@ -38,7 +38,7 @@ describe('collector', () => {
             <time datetime="2019-09-22">22 Sep 2019</time>
           </div>
           <nav>
-            <a href="/whats-on/exhibitions/2019/may/dulwich-pavilion-2019-the-colour-palace/" class="more-info">
+            <a>
               More info
             </a>
           </nav>
@@ -107,11 +107,13 @@ describe('collector', () => {
       openDate: moment('2019-06-19').toDate(),
       closeDate: moment('2019-09-08').toDate(),
       image: 'https://www.dulwichpicturegallery.org.uk/media/10430/sumi-thumb.jpg',
+      website: 'https://www.dulwichpicturegallery.org.uk/whats-on/exhibitions/2019/june/nahoko-kojima-sumi/',
     }, {
       title: 'Cutting Edge: Modernist British Printmaking',
       openDate: moment('2019-06-19').toDate(),
       closeDate: moment('2019-09-08').toDate(),
       image: 'https://www.dulwichpicturegallery.org.uk/media/9194/tube-train-power-thumb.jpg',
+      website: 'https://www.dulwichpicturegallery.org.uk/whats-on/exhibitions/2019/june/cutting-edge-modernist-british-printmaking/',
     }, {
       title: 'Dulwich Pavilion 2019: The Colour Palace',
       openDate: moment('2019-06-12').toDate(),
