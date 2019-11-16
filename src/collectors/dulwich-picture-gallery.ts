@@ -20,7 +20,7 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
   eventDefs.map((_i, elem) => {
     const loadedElem = cheerio.load(elem);
 
-    const title = loadedElem('h2 a').text();
+    const title = loadedElem('h2 a').text().trim();
 
     if (title === '') {
       throw new Error('Could not find title when parsing event');
