@@ -102,32 +102,22 @@ describe('collector', () => {
 
     expect(events.length).toBe(3);
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/The Colour Palace/);
-      const openDate = moment('2019-06-12').isSame(event.openDate);
-      const closeDate = moment('2019-09-22').isSame(event.closeDate);
-      const image = event.image === 'https://www.dulwichpicturegallery.org.uk/media/10434/new-pav-thumbnail.jpg';
-
-      return title && openDate && closeDate && image;
-    })).toBe(true);
-
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Modernist British Printmaking/);
-      const openDate = moment('2019-06-19').isSame(event.openDate);
-      const closeDate = moment('2019-09-08').isSame(event.closeDate);
-      const image = event.image === 'https://www.dulwichpicturegallery.org.uk/media/9194/tube-train-power-thumb.jpg';
-
-      return title && openDate && closeDate && image;
-    })).toBe(true);
-
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Nahoko Kojima: Sumi/);
-      const openDate = moment('2019-06-19').isSame(event.openDate);
-      const closeDate = moment('2019-09-08').isSame(event.closeDate);
-      const image = event.image === 'https://www.dulwichpicturegallery.org.uk/media/10430/sumi-thumb.jpg';
-
-      return title && openDate && closeDate && image;
-    })).toBe(true);
+    expect(events).toMatchObject([{
+      title: 'Nahoko Kojima: Sumi',
+      openDate: moment('2019-06-19').toDate(),
+      closeDate: moment('2019-09-08').toDate(),
+      image: 'https://www.dulwichpicturegallery.org.uk/media/10430/sumi-thumb.jpg',
+    }, {
+      title: 'Cutting Edge: Modernist British Printmaking',
+      openDate: moment('2019-06-19').toDate(),
+      closeDate: moment('2019-09-08').toDate(),
+      image: 'https://www.dulwichpicturegallery.org.uk/media/9194/tube-train-power-thumb.jpg',
+    }, {
+      title: 'Dulwich Pavilion 2019: The Colour Palace',
+      openDate: moment('2019-06-12').toDate(),
+      closeDate: moment('2019-09-22').toDate(),
+      image:  'https://www.dulwichpicturegallery.org.uk/media/10434/new-pav-thumbnail.jpg',
+    }]);
   });
 
   it('should parse an event correctly even when an image is not present', async () => {
