@@ -239,7 +239,7 @@ describe('collector', () => {
         <div class="card-content ">
           <div class="card-content__inner">
             <h2 class="card__title">
-              <a href="/whats-on/tate-modern/exhibition/takis" aria-label="Takis" data-gtm-name="card_link_title" data-gtm-destination="page--event">
+              <a aria-label="Takis" data-gtm-name="card_link_title" data-gtm-destination="page--event">
                 <span class="card__title--maintitle card__title--exhibition">Takis</span>
               </a>
             </h2>
@@ -335,77 +335,80 @@ describe('collector', () => {
 
     expect(events.length).toBe(8);
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Olafur Eliasson: The cubic structural evolution project/);
-      const closeDate = moment('2019-08-18').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/olafur_eliasson_the_cubic_structural_evolution_project.jpg';
-      const galleryName = event.gallery.name == 'Tate Modern';
+    expect(events).toMatchObject([{
+      title: 'Olafur Eliasson: The cubic structural evolution project',
+      closeDate: moment('2019-08-18').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/olafur_eliasson_the_cubic_structural_evolution_project.jpg',
+      website: 'https://tate.org.uk/whats-on/tate-modern/exhibition/olafur-eliasson/olafur-eliasson-cubic-structural-evolution-project',
 
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
+      gallery: {
+        name: 'Tate Modern',
+      },
+    }, {
+      title: 'Frank Bowling',
+      closeDate: moment('2019-08-26').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/frank_bowling_bartica_born_i_1967_acrylic_on_canvas_235.6_x_121.9_cm.jpg',
+      website: 'https://tate.org.uk/whats-on/tate-britain/exhibition/frank-bowling',
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Frank Bowling/);
-      const closeDate = moment('2019-08-26').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/frank_bowling_bartica_born_i_1967_acrylic_on_canvas_235.6_x_121.9_cm.jpg';
-      const galleryName = event.gallery.name == 'Tate Britain';
+      gallery: {
+        name: 'Tate Britain',
+      },
+    }, {
+      title: 'Natalia Goncharova',
+      closeDate: moment('2019-09-08').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/j_2392_1.jpg',
+      website:  'https://tate.org.uk/whats-on/tate-modern/exhibition/natalia-goncharova',
 
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
+      gallery: {
+        name: 'Tate Modern',
+      },
+    }, {
+      title: 'Art Now: France-Lise McGurn: Sleepless',
+      closeDate: moment('2019-09-08').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/francelisemcgurn_get_in_the_car_oil_300x200cm_spray_and_acrylic_on_canvas_2019_crop_new.jpg',
+      website:  'https://tate.org.uk/whats-on/tate-britain/exhibition/france-lise-mcgurn',
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Natalia Goncharova/);
-      const closeDate = moment('2019-09-08').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/j_2392_1.jpg';
-      const galleryName = event.gallery.name == 'Tate Modern';
+      gallery: {
+        name: 'Tate Britain',
+      },
+    }, {
+      title: 'Tate Britain Commission: Mike Nelson: The Asset Strippers',
+      closeDate: moment('2019-10-06').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/mike_nelson_009.jpg',
+      website:  'https://tate.org.uk/whats-on/tate-britain/exhibition/mike-nelson',
 
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
+      gallery: {
+        name: 'Tate Britain',
+      },
+    }, {
+      title: 'Takis',
+      closeDate: moment('2019-10-27').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/x60685_det_0008.jpg',
+      website:  undefined,
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Art Now: France-Lise McGurn: Sleepless/);
-      const closeDate = moment('2019-09-08').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/francelisemcgurn_get_in_the_car_oil_300x200cm_spray_and_acrylic_on_canvas_2019_crop_new.jpg';
-      const galleryName = event.gallery.name == 'Tate Britain';
+      gallery: {
+        name: 'Tate Modern',
+      },
+    }, {
+      title: 'Olafur Eliasson: In real life',
+      closeDate: moment('2020-01-05').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/your_uncertain_shaddow_crop_eliasson.jpg',
+      website:  'https://tate.org.uk/whats-on/tate-modern/exhibition/olafur-eliasson',
 
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
+      gallery: {
+        name: 'Tate Modern',
+      },
+    }, {
+      title: 'Dóra Maurer',
+      closeDate: moment('2020-07-05').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/x74284_relative_quasi_image_1996_photography_vintage_galeria_andras_bozso_1.jpg',
+      website:  'https://tate.org.uk/whats-on/tate-modern/exhibition/dora-maurer',
 
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Tate Britain Commission: Mike Nelson: The Asset Strippers/);
-      const closeDate = moment('2019-10-06').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/mike_nelson_009.jpg';
-      const galleryName = event.gallery.name == 'Tate Britain';
+      gallery: {
+        name: 'Tate Modern',
+      },
+    }]);
 
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
-
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Dóra Maurer/);
-      const closeDate = moment('2020-07-05').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/x74284_relative_quasi_image_1996_photography_vintage_galeria_andras_bozso_1.jpg';
-      const galleryName = event.gallery.name == 'Tate Modern';
-
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
-
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Takis/);
-      const closeDate = moment('2019-10-27').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/x60685_det_0008.jpg';
-      const galleryName = event.gallery.name == 'Tate Modern';
-
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
-
-    expect(events.some((event: GalleryEvent): boolean => {
-      const title = !! event.title.match(/Olafur Eliasson: In real life/);
-      const closeDate = moment('2020-01-05').isSame(event.closeDate);
-      const image = event.image === 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/your_uncertain_shaddow_crop_eliasson.jpg';
-      const galleryName = event.gallery.name == 'Tate Modern';
-
-      return title && closeDate && image && galleryName;
-    })).toBe(true);
   });
 
   it('should fail gracefully when not OK', async () => {

@@ -4,6 +4,8 @@ import request from 'request-promise-native';
 
 import {Gallery, GalleryEvent} from '../types';
 
+const tateEventWebsitePrefix = 'https://tate.org.uk';
+
 const tateModern: Gallery = {
   name: 'Tate Modern',
   address: 'Bankside, London SE1 9TG',
@@ -50,8 +52,13 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
 
     const image = loadedElem('img[data-original]').attr('data-original');
 
+    let website = loadedElem('h2.card__title a').first().attr('href');
 
-    events = [...events, {title, closeDate, gallery, image}];
+    if (typeof website !== 'undefined') {
+      website = `${tateEventWebsitePrefix}${website.trim()}`
+    }
+
+    events = [...events, {title, closeDate, gallery, image, website}];
   });
 
   return events;
