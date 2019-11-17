@@ -5,6 +5,7 @@ import {GalleryEvent} from '../types';
 
 import {collect as dpg} from './dulwich-picture-gallery';
 import {collect as tate} from './tate';
+import {collect as whitechapelGallery} from './whitechapel-gallery';
 import {collect as whiteCube} from './white-cube';
 
 class StubCollector {
@@ -20,6 +21,7 @@ class AllCollector {
       .all([
         dpg(),
         tate(),
+        whitechapelGallery(),
         whiteCube(),
       ])
 
@@ -31,6 +33,7 @@ class AllCollector {
 export default {
   DulwichPictureGallery: dpg,
   Tate: tate,
+  WhitechapelGallery: whitechapelGallery,
   WhiteCube: whiteCube,
 
   Stub: new StubCollector(),
