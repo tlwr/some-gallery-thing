@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { GalleryEvent } from '../types';
 import {GalleryEventComponent} from './event';
+import {truncateEven} from '../utils';
 
 export interface GalleryEventsComponentProps {
   events: ReadonlyArray<GalleryEvent>;
@@ -26,13 +27,13 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
         <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
       </head>
       <body>
-        
+
         <div className="grid-container">
           <header className="header">
             <h1>some gallery thing</h1>
           </header>
-          
-          {this.renderEvents(sortEvents(this.props.events))}
+
+          {this.renderEvents(truncateEven(sortEvents(this.props.events)))}
 
           <footer className="footer">
             <ul>
@@ -41,7 +42,7 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
             </ul>
         </footer>
         </div>
-        
+
       </body>
     </html>;
   }
