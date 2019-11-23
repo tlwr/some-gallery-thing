@@ -26,20 +26,12 @@ describe('integration-tests', () => {
       ).toBeGreaterThan(0)
     });
 
-    it.skip('should collect events from White Cube', async () => {
+    it('should collect events from White Cube', async () => {
       const events = await collectors.WhiteCube();
 
       console.info(events);
 
       expect(events.length).toBeGreaterThan(0);
-    });
-
-    it('should expire the collect events from White Cube test', async () => {
-      expect(
-        new Date().getTime(),
-      ).toBeLessThan(
-        new Date(2019, 12, 31).getTime(),
-      );
     });
   });
 });
