@@ -36,7 +36,7 @@ export const exampleEvents: ReadonlyArray<GalleryEvent> = [
     image: 'https://artlogic-res.cloudinary.com/w_1600,h_1000,c_limit,f_auto,fl_lossy/ws-victoriamiro/usr/exhibitions/images/548/cp201-image-3-.jpg',
   },
   {
-    title: 'Cutting Edge: Modernist British Printmaking',
+    title: 'Cutting Edge: Modernist British Printmaking. The title can also be very long and wrap over 4 lines.',
     website: 'https://www.dulwichpicturegallery.org.uk/whats-on/exhibitions/2019/june/cutting-edge-modernist-british-printmaking',
 
     openDate: moment('2019-06-19').toDate(),
@@ -53,7 +53,7 @@ export const exampleEvents: ReadonlyArray<GalleryEvent> = [
     image: 'https://www.dulwichpicturegallery.org.uk/media/9413/tube-train-power-large-banner.jpg',
   },
   {
-    title: 'An exhibition without an image',
+    title: 'An exhibition without an image.',
     website: 'https://www.art.gallery',
 
     openDate: moment('2019-06-19').toDate(),
