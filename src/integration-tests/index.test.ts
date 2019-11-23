@@ -33,5 +33,13 @@ describe('integration-tests', () => {
 
       expect(events.length).toBeGreaterThan(0);
     });
+
+    it('should collect events from Whitechapel Gallery', async () => {
+      const events = await collectors.WhitechapelGallery();
+
+      console.info(events);
+
+      expect(events.length).toBeGreaterThan(0);
+    });
   });
 });
