@@ -102,7 +102,7 @@ header {
 
 .event {
   color: $s-white;
-  height: 10rem;
+  height: 12rem;
   margin: 2px;
   outline: 4px solid $s-white;
   padding: 1rem;
@@ -131,7 +131,7 @@ header {
     h2 {
       font-size: 2rem;
       line-height: 1.25;
-      margin-top: 2rem;
+      margin-top: 2.25rem;
       padding-right: .5rem;
       position: absolute;
     }
@@ -147,7 +147,7 @@ header {
     .gallery {
       position: absolute;
       top: 0;
-      width: 40%;
+      width: 50%;
     }
   }
 }
@@ -178,6 +178,10 @@ header {
     h1 {
       font-size: 8.3vw;
     }
+  }
+
+  .event {
+  height: 14rem;
   }
 
   .footer {
