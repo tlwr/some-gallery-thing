@@ -5,6 +5,7 @@ import {GalleryEvent} from '../types';
 
 import {collect as dpg} from './dulwich-picture-gallery';
 import {collect as tate} from './tate';
+import {collect as thePhotographersGallery} from './the-photographers-gallery';
 import {collect as whitechapelGallery} from './whitechapel-gallery';
 import {collect as whiteCube} from './white-cube';
 
@@ -21,6 +22,7 @@ class AllCollector {
       .all([
         dpg(),
         tate(),
+        thePhotographersGallery(),
         whitechapelGallery(),
         whiteCube(),
       ])
@@ -33,6 +35,7 @@ class AllCollector {
 export default {
   DulwichPictureGallery: dpg,
   Tate: tate,
+  ThePhotographersGallery: thePhotographersGallery,
   WhitechapelGallery: whitechapelGallery,
   WhiteCube: whiteCube,
 

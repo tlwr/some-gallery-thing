@@ -26,6 +26,14 @@ describe('integration-tests', () => {
       ).toBeGreaterThan(0)
     });
 
+    it('should collect events from The Photographers Gallery', async () => {
+      const events = await collectors.ThePhotographersGallery();
+
+      console.info(events);
+
+      expect(events.length).toBeGreaterThan(0);
+    });
+
     it('should collect events from White Cube', async () => {
       const events = await collectors.WhiteCube();
 
