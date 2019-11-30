@@ -33,7 +33,10 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
 
     const meta = loadedElem('h5').text().trim();
 
-    const location = meta.match(/White Cube .*/)[0];
+    const match = meta.match(/White Cube .*/)
+    if (!match) return
+    const location = match[0];
+
     let gallery: Gallery;
     if (location.match(/bermondsey/i)) {
       gallery = whiteCubeBermondsey;

@@ -113,6 +113,20 @@ White Cube Hong Kong</h5>
 </a></figcaption>
 </figure>
 </div>
+<div class="col col-6" data-exclude-item="">
+<figure><a href=
+"https://whitecube.com/exhibitions/exhibition/harland_miller_hong_kong_2019"
+title="" class="img-thumb"><img src=
+"/media/w800/harland-miller-hong-kong-2019-3.jpg" alt="" title=
+" Harland Miller - Hong Kong - 2019"></a>
+<figcaption><a href=
+"https://whitecube.com/exhibitions/exhibition/harland_miller_hong_kong_2019"
+title="" class="title-hover">
+<h4>Harland Miller<br></h4>
+<h5>no location and no date</h5>
+</a></figcaption>
+</figure>
+</div>
 <div class="col col-6 hidden hidden-fade-in" data-new-field=""
 data-exhibitions-template="">
 <figure><a href="" title="" class="img-thumb"><img src=""></a>
