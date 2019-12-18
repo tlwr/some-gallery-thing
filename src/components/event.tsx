@@ -42,21 +42,23 @@ export class GalleryEventComponent extends React.Component<GalleryEventComponent
   public render(): React.ReactElement {
     return <a className="event"
               href={link(this.props.event.gallery.website, this.props.event.website)}>
-          {
-        this.props.event.image
-        ? <img src={this.props.event.image}/>
-        : ''
-      }    
+             
       <div className="event-details">  
-        <p className="gallery">{this.props.event.gallery.name.toLowerCase()}</p>
-        <p className="close-date">
-          {niceCloseDate(this.props.event.closeDate)}
-        </p>
+        <div className="event-meta">
+          <p className="gallery">{this.props.event.gallery.name.toLowerCase()}</p>
+          <p className="close-date">
+            {niceCloseDate(this.props.event.closeDate)}
+          </p>
+        </div>
 
         <h2>{this.props.event.title}</h2>
       </div>
 
-      
+      {
+        this.props.event.image
+        ? <img src={this.props.event.image}/>
+        : ''
+      } 
 
       
     </a>;

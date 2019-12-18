@@ -28,12 +28,14 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
       </head>
       <body>
 
-        <div className="grid-container">
+        <div className="">
           <header className="header">
             <h1>some gallery thing</h1>
           </header>
 
-          {this.renderEvents(truncateEven(sortEvents(this.props.events)))}
+          <main className="grid-container">
+           {this.renderEvents(truncateEven(sortEvents(this.props.events)))}
+          </main>
 
           <footer className="footer">
             <ul>
