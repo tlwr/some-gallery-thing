@@ -23,15 +23,9 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-auto-rows: minmax(240px, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
-
-/*.header {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-}*/
 
 .footer {
 
@@ -110,14 +104,14 @@ header {
   z-index: 1;
 
   img {
+    bottom: 1rem;
     filter: grayscale(100%) brightness(.6);
+    float: right;
     max-height: 8rem;
     max-width: 100%;
-    z-index: -1;
-    float: right;
     position: absolute;
-    bottom: 1rem;
     right: 1rem;
+    z-index: -1;
   }
 
   .event-details {
@@ -148,7 +142,7 @@ header {
     }
 
     .event-meta {
-    display: flex;
+      display: flex;
     }
 
   }
