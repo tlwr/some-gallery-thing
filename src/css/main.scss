@@ -21,17 +21,11 @@ body {
   max-width: 960px;
 }
 
-
 .grid-container {
   display: grid;
+  grid-auto-rows: minmax(240px, 1fr);
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-
-}
-
-.header,
-.footer {
-  grid-column: 1 / -1;
-}
+  }
 
 .footer {
 
@@ -102,20 +96,22 @@ header {
 
 .event {
   color: $s-white;
-  height: 12rem;
   margin: 2px;
   outline: 4px solid $s-white;
   padding: 1rem;
   position: relative;
   text-decoration: none;
+  z-index: 1;
 
   img {
     bottom: 1rem;
     filter: grayscale(100%) brightness(.6);
+    float: right;
     max-height: 8rem;
     max-width: 100%;
     position: absolute;
     right: 1rem;
+    z-index: -1;
   }
 
   .event-details {
@@ -131,24 +127,24 @@ header {
     h2 {
       font-size: 2rem;
       line-height: 1.25;
-      margin-top: 2.25rem;
+      margin: 0;
       padding-right: .5rem;
-      position: absolute;
+      position: relative;
     }
 
     .close-date {
-      position: absolute;
-      right: 1rem;
       text-align: right;
-      top: 0;
-      width: 40%;
+      width: 50%;
     }
 
     .gallery {
-      position: absolute;
-      top: 0;
       width: 50%;
     }
+
+    .event-meta {
+      display: flex;
+    }
+
   }
 }
 
@@ -178,10 +174,6 @@ header {
     h1 {
       font-size: 8.3vw;
     }
-  }
-
-  .event {
-    height: 14rem;
   }
 
   .footer {
