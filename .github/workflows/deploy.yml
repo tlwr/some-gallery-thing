@@ -32,3 +32,5 @@ jobs:
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           CF_EMAIL: ${{secrets.CF_EMAIL }}
+
+      - run: npm run test:smoke
