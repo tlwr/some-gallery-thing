@@ -1,5 +1,3 @@
-import moment from 'moment';
-
 import {sortEvents} from './events';
 
 describe('GalleryEventsComponent', () => {

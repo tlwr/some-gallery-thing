@@ -1,5 +1,4 @@
 import cheerio from 'cheerio';
-import moment from 'moment';
 import request from 'request-promise-native';
 
 const baseURL = 'https://some-gallery-thing.toby.codes';
