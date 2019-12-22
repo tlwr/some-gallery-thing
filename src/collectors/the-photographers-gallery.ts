@@ -1,5 +1,4 @@
 import cheerio from 'cheerio';
-import lodash from 'lodash';
 import moment from 'moment';
 import request from 'request-promise-native';
 

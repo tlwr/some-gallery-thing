@@ -5,8 +5,6 @@ import request from 'request-promise-native';
 
 import {Gallery, GalleryEvent} from '../types';
 
-const dpgEventWebsitePrefix = 'https://www.whitechapelgallery.org';
-
 const gallery: Gallery = {
   name: 'Whitechapel Gallery',
   address: '77-82 Whitechapel High Street, London E1 7QX',
