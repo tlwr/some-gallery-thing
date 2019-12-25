@@ -63,7 +63,7 @@
     "nock": "^10.0.6",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.13.0",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.2",
     "nodemon-webpack-plugin": "^4.2.2",
     "pino-pretty": "^3.5.0",
     "react": "^16.12.0",
