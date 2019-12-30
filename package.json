@@ -82,7 +82,7 @@
     "typescript": "^3.7.4",
     "typings-for-css-modules-loader": "^1.7.0",
     "urijs": "^1.19.2",
-    "webpack": "^4.41.4",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
   "jest": {
