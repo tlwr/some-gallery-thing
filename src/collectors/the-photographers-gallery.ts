@@ -24,7 +24,12 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
     const title = loadedElem('.title').text().trim();
 
     const dates = loadedElem('.date-display-range').text();
+
     const dateFragments = dates.match(/\d* [A-Za-z]* \d*/g);
+
+    if (dateFragments === null) {
+      return;
+    }
 
     const openDate = moment(dateFragments[0], 'DD MMMM YYYY').toDate();
     const closeDate = moment(dateFragments[1], 'DD MMMM YYYY').toDate();
