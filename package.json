@@ -43,7 +43,7 @@
     "@types/request-promise-native": "^1.0.17",
     "@types/supertest": "^2.0.8",
     "@types/urijs": "^1.19.4",
-    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.15.0",
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^5.0.2",
