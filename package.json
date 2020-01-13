@@ -78,7 +78,7 @@
     "tachyons": "^4.11.1",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
-    "ts-node": "^8.5.4",
+    "ts-node": "^8.6.2",
     "typescript": "^3.7.4",
     "typings-for-css-modules-loader": "^1.7.0",
     "urijs": "^1.19.2",
