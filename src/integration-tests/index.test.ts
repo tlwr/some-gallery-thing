@@ -34,12 +34,20 @@ describe('integration-tests', () => {
       expect(events.length).toBeGreaterThan(0);
     });
 
-    it('should collect events from White Cube', async () => {
+    it.skip('should collect events from White Cube', async () => {
       const events = await collectors.WhiteCube();
 
       console.info(events);
 
       expect(events.length).toBeGreaterThan(0);
+    });
+
+    it('should expire the collect events from White Cube test', async () => {
+      expect(
+        new Date().getTime(),
+      ).toBeLessThan(
+        new Date(2020, 2, 14).getTime(),
+      );
     });
 
     it('should collect events from Whitechapel Gallery', async () => {
