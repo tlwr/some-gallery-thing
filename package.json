@@ -38,7 +38,7 @@
     "@types/node": "^13.5.1",
     "@types/node-fetch": "^2.5.4",
     "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
+    "@types/react-dom": "^16.9.5",
     "@types/request": "^2.48.4",
     "@types/request-promise-native": "^1.0.17",
     "@types/supertest": "^2.0.8",
