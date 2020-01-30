@@ -55,7 +55,7 @@
     "express": "^4.17.1",
     "express-pino-logger": "^4.0.0",
     "express-prom-bundle": "^5.1.5",
-    "extract-loader": "^3.1.0",
+    "extract-loader": "^4.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
     "lodash": "^4.17.15",
