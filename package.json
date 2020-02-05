@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/tlwr/some-gallery-thing#readme",
   "dependencies": {
-    "@cloudflare/wrangler": "^1.6.0",
+    "@cloudflare/wrangler": "^1.7.0",
     "@types/body-parser": "^1.17.1",
     "@types/cheerio": "^0.22.15",
     "@types/express": "^4.17.2",
