@@ -2,12 +2,20 @@ import collectors from '../collectors';
 
 describe('integration-tests', () => {
   describe('collectors', () => {
-    it('should collect events from Dulwich Picture Gallery', async () => {
+    it.skip('should collect events from Dulwich Picture Gallery', async () => {
       const events = await collectors.DulwichPictureGallery();
 
       console.info(events);
 
       expect(events.length).toBeGreaterThan(0);
+    });
+
+    it('should expire the collect events from Dulwich Picture Gallery test', async () => {
+      expect(
+        new Date().getTime(),
+      ).toBeLessThan(
+        new Date(2020, 3, 1).getTime(),
+      );
     });
 
     it('should collect events from Tate Modern & Tate Britain', async () => {
@@ -46,7 +54,7 @@ describe('integration-tests', () => {
       expect(
         new Date().getTime(),
       ).toBeLessThan(
-        new Date(2020, 2, 14).getTime(),
+        new Date(2020, 3, 1).getTime(),
       );
     });
 
