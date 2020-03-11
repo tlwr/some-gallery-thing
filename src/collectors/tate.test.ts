@@ -47,6 +47,38 @@ describe('collector', () => {
         <div class="card__inner">
           <div class="card-media card-media--image">
             <div class="card-media__inner responsive-container">
+              <a href="/whats-on/tate-modern/exhibition/andy-warhol" aria-label="Andy Warhol" data-gtm-name="card_link_image" data-gtm-destination="page--event">
+  <div class="responsive-container__outer-sizer" style=" max-width: 576px; margin: 0 auto;">
+    <div class="responsive-container__sizer protected" style="--aspect-ratio: 100/70.3125; --aspect-ratio-percentage: 70.3125%; ">
+  <img alt="" data-src-170-120="https://www.tate.org.uk/sites/default/files/styles/width-170/public/warhol_marilyn_diptych.jpg" data-src-240-169="https://www.tate.org.uk/sites/default/files/styles/width-240/public/warhol_marilyn_diptych.jpg" data-src-340-239="https://www.tate.org.uk/sites/default/files/styles/width-340/public/warhol_marilyn_diptych.jpg" data-src-420-295="https://www.tate.org.uk/sites/default/files/styles/width-420/public/warhol_marilyn_diptych.jpg" data-src-480-338="https://www.tate.org.uk/sites/default/files/styles/width-480/public/warhol_marilyn_diptych.jpg" data-src-576-405="https://www.tate.org.uk/sites/default/files/styles/width-840/public/warhol_marilyn_diptych.jpg" src="https://www.tate.org.uk/sites/default/files/styles/width-340/public/warhol_marilyn_diptych.jpg" data-original="https://www.tate.org.uk/sites/default/files/styles/width-340/public/warhol_marilyn_diptych.jpg" data-current-size="340-239" data-visible="true" data-caption="" draggable="false">
+  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/warhol_marilyn_diptych.jpg" alt="" /></noscript>
+  </div></div>
+              </a>
+          </div>
+      </div>
+      <div class="card-header">
+        <h3 class="card__label card__label--type">Tate Modern</h3>
+        <h3 class="card__label card__label--type">Exhibition</h3>
+      </div>
+      <div class="card-content ">
+        <div class="card-content__inner">
+          <h2 class="card__title">
+                <a href="/whats-on/tate-modern/exhibition/andy-warhol" aria-label="Andy Warhol" data-gtm-name="card_link_title" data-gtm-destination="page--event">
+                    <span class="card__title--maintitle card__title--exhibition">Andy Warhol</span>
+                </a>
+          </h2>
+          <div class="card__when">
+              <span class="card__when--date">12 Mar – 6 Sep 2020</span>
+          </div>
+          <span class="card__label card__label--status">Now booking</span>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__inner">
+          <div class="card-media card-media--image">
+            <div class="card-media__inner responsive-container">
               <a href="/whats-on/tate-modern/exhibition/olafur-eliasson/olafur-eliasson-cubic-structural-evolution-project" aria-label="Olafur Eliasson: The cubic structural evolution project" data-gtm-name="card_link_image" data-gtm-destination="page--event">
                 <div class="responsive-container__outer-sizer" style=" max-width: 1600px; margin: 0 auto;">
                   <div class="responsive-container__sizer" style="--aspect-ratio: 100/66.5625; --aspect-ratio-percentage: 66.5625%; ">
@@ -332,9 +364,18 @@ describe('collector', () => {
 
     const events = await collect();
 
-    expect(events.length).toBe(8);
+    expect(events.length).toBe(9);
 
     expect(events).toMatchObject([{
+      title: 'Andy Warhol',
+      closeDate: moment('2020-09-06').toDate(),
+      image: 'https://www.tate.org.uk/sites/default/files/styles/width-340/public/warhol_marilyn_diptych.jpg',
+      website: 'https://tate.org.uk/whats-on/tate-modern/exhibition/andy-warhol',
+
+      gallery: {
+        name: 'Tate Modern',
+      },
+    }, {
       title: 'Olafur Eliasson: The cubic structural evolution project',
       closeDate: moment('2019-08-18').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/olafur_eliasson_the_cubic_structural_evolution_project.jpg',

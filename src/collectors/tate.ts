@@ -42,13 +42,16 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
 
     const title = loadedElem('span.card__title--maintitle.card__title--exhibition').text().trim();
 
-    const closeDate = moment(
-      loadedElem('span.card__when--date')
-      .text()
-      .replace(/Until/, '')
-      .trim(),
-      'DD MMM YYYY',
-    ).toDate();
+    const dateText = loadedElem('span.card__when--date').text();
+    let openDate: Date | undefined = undefined;
+    let closeDate: Date | undefined = undefined;;
+    if (dateText.indexOf('Until') >= 0) {
+      closeDate = moment(dateText.replace(/Until/, '').trim(), 'DD MMM YYYY').toDate();
+    } else {
+      const [openDateText, closeDateText, ..._] = dateText.split('–');
+      openDate = moment(openDate, 'DD MMM').toDate();
+      closeDate = moment(closeDateText, 'DD MMM YYYY').toDate();
+    }
 
     const image = loadedElem('img[data-original]').attr('data-original');
 
@@ -58,7 +61,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
       website = `${tateEventWebsitePrefix}${website.trim()}`
     }
 
-    events = [...events, {title, closeDate, gallery, image, website}];
+    events = [...events, {title, openDate, closeDate, gallery, image, website}];
   });
 
   return events;
