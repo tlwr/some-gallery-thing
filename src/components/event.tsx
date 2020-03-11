@@ -42,8 +42,7 @@ export class GalleryEventComponent extends React.Component<GalleryEventComponent
   public render(): React.ReactElement {
     return <a className="event"
               href={link(this.props.event.gallery.website, this.props.event.website)}>
-             
-      <div className="event-details">  
+      <div className="event-details">
         <div className="event-meta">
           <p className="gallery">{this.props.event.gallery.name.toLowerCase()}</p>
           <p className="close-date">
@@ -58,9 +57,7 @@ export class GalleryEventComponent extends React.Component<GalleryEventComponent
         this.props.event.image
         ? <img src={this.props.event.image}/>
         : ''
-      } 
-
-      
+      }
     </a>;
   }
 }
