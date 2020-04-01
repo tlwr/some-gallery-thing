@@ -10,14 +10,6 @@ describe('integration-tests', () => {
       expect(events.length).toBeGreaterThan(0);
     });
 
-    it('should expire the collect events from Dulwich Picture Gallery test', async () => {
-      expect(
-        new Date().getTime(),
-      ).toBeLessThan(
-        new Date(2020, 3, 1).getTime(),
-      );
-    });
-
     it('should collect events from Tate Modern & Tate Britain', async () => {
       const events = await collectors.Tate();
 
@@ -48,14 +40,6 @@ describe('integration-tests', () => {
       console.info(events);
 
       expect(events.length).toBeGreaterThan(0);
-    });
-
-    it('should expire the collect events from White Cube test', async () => {
-      expect(
-        new Date().getTime(),
-      ).toBeLessThan(
-        new Date(2020, 3, 1).getTime(),
-      );
     });
 
     it('should collect events from Whitechapel Gallery', async () => {
