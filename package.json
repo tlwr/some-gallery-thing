@@ -44,7 +44,7 @@
     "@types/supertest": "^2.0.8",
     "@types/urijs": "^1.19.8",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
-    "@typescript-eslint/parser": "^2.29.0",
+    "@typescript-eslint/parser": "^2.30.0",
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^5.1.0",
     "css-loader": "^3.5.3",
