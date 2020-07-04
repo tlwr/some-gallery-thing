@@ -4,10 +4,10 @@ import mainCSS from '../../css/main.scss';
 
 export class AssetsController {
   public async handleCSS(req: Request): Promise<Response> {
-    return new Response(mainCSS as BodyInit, {
+    return Promise.resolve(new Response(mainCSS as BodyInit, {
       headers: {
         'Content-Type': 'text/css',
       },
-    });
+    }));
   }
 }
