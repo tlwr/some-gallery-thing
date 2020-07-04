@@ -1,7 +1,7 @@
 # some gallery thing
 
 [![Build status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftlwr%2Fsome-gallery-thing%2Fbadge&style=flat-square)](https://github.com/tlwr/some-gallery-thing/actions)
-[![License](https://img.shields.io/github/license/tlwr/some-gallery-thing?style=flat-square)](https://github.com/tlwr/some-gallery-thing/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/tlwr/some-gallery-thing?style=flat-square)](https://github.com/tlwr/some-gallery-thing/blob/main/LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/tlwr/some-gallery-thing?style=flat-square)](https://github.com/tlwr/some-gallery-thing/graphs/contributors)
 [![Last commit](https://img.shields.io/github/last-commit/tlwr/some-gallery-thing?style=flat-square)](https://github.com/tlwr/some-gallery-thing/commit/HEAD)
 
@@ -21,7 +21,7 @@
 
 Or
 
-1. Push to master via GitHub actions
+1. Push to main via GitHub actions
 
 Or
 
