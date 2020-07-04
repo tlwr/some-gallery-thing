@@ -2,7 +2,7 @@ import collectors from '../collectors';
 
 describe('integration-tests', () => {
   describe('collectors', () => {
-    it.skip('should collect events from Dulwich Picture Gallery', async () => {
+    it('should collect events from Dulwich Picture Gallery', async () => {
       const events = await collectors.DulwichPictureGallery();
 
       console.info(events);
@@ -42,7 +42,7 @@ describe('integration-tests', () => {
       expect(events.length).toBeGreaterThan(0);
     });
 
-    it.skip('should collect events from White Cube', async () => {
+    it('should collect events from White Cube', async () => {
       const events = await collectors.WhiteCube();
 
       console.info(events);
