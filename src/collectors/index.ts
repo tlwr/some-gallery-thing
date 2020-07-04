@@ -4,6 +4,7 @@ import {exampleEvents} from '../data/events';
 import {GalleryEvent} from '../types';
 
 import {collect as dpg} from './dulwich-picture-gallery';
+import {collect as gasworks} from './gasworks';
 import {collect as tate} from './tate';
 import {collect as thePhotographersGallery} from './the-photographers-gallery';
 import {collect as whitechapelGallery} from './whitechapel-gallery';
@@ -21,6 +22,7 @@ class AllCollector {
     const allEvents = await Promise
       .all([
         dpg(),
+        gasworks(),
         tate(),
         thePhotographersGallery(),
         whitechapelGallery(),
@@ -34,6 +36,7 @@ class AllCollector {
 // istanbul ignore next
 export default {
   DulwichPictureGallery: dpg,
+  Gasworks: gasworks,
   Tate: tate,
   ThePhotographersGallery: thePhotographersGallery,
   WhitechapelGallery: whitechapelGallery,
