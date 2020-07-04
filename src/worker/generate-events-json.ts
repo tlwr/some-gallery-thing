@@ -7,6 +7,9 @@ collectors
   .All
   .collect()
   .then((events: ReadonlyArray<GalleryEvent>) => {
+    return events.filter(e => !isNaN(Number(e.closeDate)));
+  })
+  .then((events: ReadonlyArray<GalleryEvent>) => {
     console.error('Collected events, writing to STDOUT');
     console.log(JSON.stringify({events: events}));
     console.error('Wrote events to STDOUT');
