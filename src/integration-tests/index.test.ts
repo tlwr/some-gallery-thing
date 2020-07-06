@@ -18,6 +18,14 @@ describe('integration-tests', () => {
       expect(events.length).toBeGreaterThan(0);
     });
 
+    it('should collect events from the Tintype Gallery', async () => {
+      const events = await collectors.TintypeGallery();
+
+      console.info(events);
+
+      expect(events.length).toBeGreaterThan(0);
+    });
+
     it('should collect events from Tate Modern & Tate Britain', async () => {
       const events = await collectors.Tate();
 

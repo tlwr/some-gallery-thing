@@ -6,6 +6,7 @@ import {GalleryEvent} from '../types';
 import {collect as dpg} from './dulwich-picture-gallery';
 import {collect as gasworks} from './gasworks';
 import {collect as tate} from './tate';
+import {collect as tintypeGallery} from './tintype-gallery';
 import {collect as thePhotographersGallery} from './the-photographers-gallery';
 import {collect as whitechapelGallery} from './whitechapel-gallery';
 import {collect as whiteCube} from './white-cube';
@@ -24,6 +25,7 @@ class AllCollector {
         dpg(),
         gasworks(),
         tate(),
+        tintypeGallery(),
         thePhotographersGallery(),
         whitechapelGallery(),
         whiteCube(),
@@ -38,6 +40,7 @@ export default {
   DulwichPictureGallery: dpg,
   Gasworks: gasworks,
   Tate: tate,
+  TintypeGallery: tintypeGallery,
   ThePhotographersGallery: thePhotographersGallery,
   WhitechapelGallery: whitechapelGallery,
   WhiteCube: whiteCube,
