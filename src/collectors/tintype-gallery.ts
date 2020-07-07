@@ -27,7 +27,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
     const openDate = moment(dates[0], 'DD MMMM').toDate();
     const closeDate = moment(dates[1], 'DD MMMM YYYY').toDate();
     const event: GalleryEvent = {
-      title, openDate, closeDate, gallery: tintypeGallery, website,
+      title: fullTitle, openDate, closeDate, gallery: tintypeGallery, website,
     }
 
     events = [event, ...events];
