@@ -58,7 +58,7 @@
     "extract-loader": "^5.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.18",
     "moment": "^2.27.0",
     "nock": "^13.0.2",
     "node-fetch": "^2.6.0",
