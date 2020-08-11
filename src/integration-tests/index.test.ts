@@ -50,7 +50,7 @@ describe('integration-tests', () => {
       expect(events.length).toBeGreaterThan(0);
     });
 
-    it('should collect events from White Cube', async () => {
+    it.skip('should collect events from White Cube', async () => {
       const events = await collectors.WhiteCube();
 
       console.info(events);
