@@ -37,13 +37,21 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
       const image = elem('img').first().attr('src');
       const website = elem('a[href]').first().attr('href');
 
-      const rawDates = elem('p').last().text().match(/\d{1,2} [a-zA-Z]{3} \d{4}/)[0];
-      const closeDate = moment(rawDates, 'D MMM YYYY').toDate();
+      const rawDates = elem('p').last().text().match(/\d{1,2} [a-zA-Z]{3} \d{4}/);
+
+      // istanbul ignore next
+      if (rawDates == null) {
+        return null;
+      }
+
+      const rawDate = rawDates[0];
+      const closeDate = moment(rawDate, 'D MMM YYYY').toDate();
 
       return {
         title, website, image, closeDate, gallery,
       };
     })
+    .filter(e => e != null)
     .filter(e => ! e.title.match(/offsite.exhibition/i))
   ;
 };
