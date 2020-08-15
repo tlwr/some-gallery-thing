@@ -125,9 +125,14 @@ header {
     }
 
     h2 {
+      // sass-lint:disable-block no-vendor-prefixes
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
       font-size: 2rem;
       line-height: 1.25;
       margin: 0;
+      overflow: hidden;
       padding-right: .5rem;
       position: relative;
     }
