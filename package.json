@@ -8,7 +8,7 @@
     "stub-events-unless-exist": "mkdir -p dist && test -e dist/events.json || echo '{\"events\":[]}' > dist/events.json",
     "scrape": "mkdir -p dist && ts-node src/worker/generate-events-json.ts > dist/events.json",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests --testPathIgnorePatterns smoke-tests",
-    "test:integration": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
+    "test:integration": "NODE_ENV=test jest --testTimeout 30000 --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
     "test:smoke": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern smoke-tests",
     "build": "npm run stub-events-unless-exist && NODE_ENV=${NODE_ENV:-development} webpack --config webpack.config.js",
     "compile": "npm run scrape && NODE_ENV=compile webpack --config webpack.config.js",
