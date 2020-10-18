@@ -83,7 +83,7 @@
     "typings-for-css-modules-loader": "^1.7.0",
     "urijs": "^1.19.2",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^4.0.0"
   },
   "jest": {
     "testEnvironment": "node",
