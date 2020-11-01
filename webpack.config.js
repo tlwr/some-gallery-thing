@@ -6,14 +6,14 @@ const commonConfig = {
     rules: [
       {
         test: /\.css$/,
-        loader: [
+        use: [
           'css-loader',
         ],
       },
       {
         include: path.join(__dirname, 'src/css'),
         test: /\.scss$/,
-        loader: [
+        use: [
           'css-to-string-loader',
           'css-loader',
           'sass-loader',
