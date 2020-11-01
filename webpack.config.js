@@ -5,16 +5,9 @@ const commonConfig = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'css-loader',
-        ],
-      },
-      {
         include: path.join(__dirname, 'src/css'),
         test: /\.scss$/,
         use: [
-          'css-to-string-loader',
           'css-loader',
           'sass-loader',
         ],
