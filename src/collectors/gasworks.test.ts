@@ -186,7 +186,7 @@ describe('collector', () => {
 
     expect(events).toMatchObject([{
       title: 'True Currency: About Feminist Economics',
-      openDate: moment('16-07', 'dd-MM').toDate(),
+      openDate: moment('16-07', 'DD-MM').toDate(),
       closeDate: moment('2020-08-27').toDate(),
       website: 'https://www.gasworks.org.uk/exhibitions/true-currency-about-feminist-economics-podcast-2020-07-16/',
       image: 'https://www.gasworks.org.uk/CACHE/images/2020/05/28/Womens_March_-_sound_recordings/ca803175da4b41ba6abbc9e0a4d91277.jpg',
@@ -196,7 +196,7 @@ describe('collector', () => {
       },
     },{
       title: 'Gasworks Online Screenings: May - June',
-      openDate: moment('18-05', 'dd-MM').toDate(),
+      openDate: moment('18-05', 'DD-MM').toDate(),
       closeDate: moment('2020-07-05').toDate(),
       website: 'https://www.gasworks.org.uk/exhibitions/gasworks-online-screenings-may-june/',
       image: 'https://www.gasworks.org.uk/CACHE/images/2020/04/29/Farmacopea_STILL_3/81aa6968201c5af7a955e7ba16e9c61f.jpg',
