@@ -977,7 +977,7 @@ Contact: info@tintypegallery.com</p>
 
     expect(events).toMatchObject([{
       title: 'Jo Addison: Dread one day at a time',
-      openDate: moment('2020-07-22').toDate(),
+      openDate: moment('22-07', 'dd-MM').toDate(),
       closeDate: moment('2020-09-12').toDate(),
       website: 'https://www.tintypegallery.com/exhibitions/dread-one-day-at-a-time/',
 
@@ -986,7 +986,7 @@ Contact: info@tintypegallery.com</p>
       },
     },{
       title: 'Adam Gillam: In Constant Use',
-      openDate: moment('2020-06-10').toDate(),
+      openDate: moment('10-06', 'dd-MM').toDate(),
       closeDate: moment('2020-07-18').toDate(),
       website: 'https://www.tintypegallery.com/exhibitions/in-constant-use/',
 
