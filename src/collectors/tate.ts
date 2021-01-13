@@ -4,7 +4,7 @@ import request from 'request-promise-native';
 
 import {Gallery, GalleryEvent} from '../types';
 
-const tateEventWebsitePrefix = 'https://tate.org.uk';
+const tateEventWebsitePrefix = 'https://www.tate.org.uk';
 
 const tateModern: Gallery = {
   name: 'Tate Modern',

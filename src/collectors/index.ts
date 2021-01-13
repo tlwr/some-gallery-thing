@@ -24,7 +24,7 @@ class AllCollector {
       .all([
         dpg(),
         gasworks(),
-        tate(),
+        // tate(),
         thePhotographersGallery(),
         whitechapelGallery(),
         whiteCube(),
