@@ -370,7 +370,7 @@ describe('collector', () => {
       title: 'Andy Warhol',
       closeDate: moment('2020-09-06').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-340/public/warhol_marilyn_diptych.jpg',
-      website: 'https://tate.org.uk/whats-on/tate-modern/exhibition/andy-warhol',
+      website: 'https://www.tate.org.uk/whats-on/tate-modern/exhibition/andy-warhol',
 
       gallery: {
         name: 'Tate Modern',
@@ -379,7 +379,7 @@ describe('collector', () => {
       title: 'Olafur Eliasson: The cubic structural evolution project',
       closeDate: moment('2019-08-18').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/olafur_eliasson_the_cubic_structural_evolution_project.jpg',
-      website: 'https://tate.org.uk/whats-on/tate-modern/exhibition/olafur-eliasson/olafur-eliasson-cubic-structural-evolution-project',
+      website: 'https://www.tate.org.uk/whats-on/tate-modern/exhibition/olafur-eliasson/olafur-eliasson-cubic-structural-evolution-project',
 
       gallery: {
         name: 'Tate Modern',
@@ -388,7 +388,7 @@ describe('collector', () => {
       title: 'Frank Bowling',
       closeDate: moment('2019-08-26').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/frank_bowling_bartica_born_i_1967_acrylic_on_canvas_235.6_x_121.9_cm.jpg',
-      website: 'https://tate.org.uk/whats-on/tate-britain/exhibition/frank-bowling',
+      website: 'https://www.tate.org.uk/whats-on/tate-britain/exhibition/frank-bowling',
 
       gallery: {
         name: 'Tate Britain',
@@ -397,7 +397,7 @@ describe('collector', () => {
       title: 'Natalia Goncharova',
       closeDate: moment('2019-09-08').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/j_2392_1.jpg',
-      website:  'https://tate.org.uk/whats-on/tate-modern/exhibition/natalia-goncharova',
+      website:  'https://www.tate.org.uk/whats-on/tate-modern/exhibition/natalia-goncharova',
 
       gallery: {
         name: 'Tate Modern',
@@ -406,7 +406,7 @@ describe('collector', () => {
       title: 'Art Now: France-Lise McGurn: Sleepless',
       closeDate: moment('2019-09-08').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/francelisemcgurn_get_in_the_car_oil_300x200cm_spray_and_acrylic_on_canvas_2019_crop_new.jpg',
-      website:  'https://tate.org.uk/whats-on/tate-britain/exhibition/france-lise-mcgurn',
+      website:  'https://www.tate.org.uk/whats-on/tate-britain/exhibition/france-lise-mcgurn',
 
       gallery: {
         name: 'Tate Britain',
@@ -415,7 +415,7 @@ describe('collector', () => {
       title: 'Tate Britain Commission: Mike Nelson: The Asset Strippers',
       closeDate: moment('2019-10-06').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/mike_nelson_009.jpg',
-      website:  'https://tate.org.uk/whats-on/tate-britain/exhibition/mike-nelson',
+      website:  'https://www.tate.org.uk/whats-on/tate-britain/exhibition/mike-nelson',
 
       gallery: {
         name: 'Tate Britain',
@@ -433,7 +433,7 @@ describe('collector', () => {
       title: 'Olafur Eliasson: In real life',
       closeDate: moment('2020-01-05').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/your_uncertain_shaddow_crop_eliasson.jpg',
-      website:  'https://tate.org.uk/whats-on/tate-modern/exhibition/olafur-eliasson',
+      website:  'https://www.tate.org.uk/whats-on/tate-modern/exhibition/olafur-eliasson',
 
       gallery: {
         name: 'Tate Modern',
@@ -442,7 +442,7 @@ describe('collector', () => {
       title: 'Dóra Maurer',
       closeDate: moment('2020-07-05').toDate(),
       image: 'https://www.tate.org.uk/sites/default/files/styles/width-170/public/x74284_relative_quasi_image_1996_photography_vintage_galeria_andras_bozso_1.jpg',
-      website:  'https://tate.org.uk/whats-on/tate-modern/exhibition/dora-maurer',
+      website:  'https://www.tate.org.uk/whats-on/tate-modern/exhibition/dora-maurer',
 
       gallery: {
         name: 'Tate Modern',
