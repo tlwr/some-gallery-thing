@@ -78,7 +78,7 @@
     "ts-jest": "^25.5.1",
     "ts-loader": "^8.0.16",
     "ts-node": "^9.1.1",
-    "typescript": "^3.9.7",
+    "typescript": "^3.9.8",
     "typings-for-css-modules-loader": "^1.7.0",
     "urijs": "^1.19.5",
     "webpack": "^5.21.2",
