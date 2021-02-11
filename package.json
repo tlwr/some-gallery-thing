@@ -30,7 +30,7 @@
   "dependencies": {
     "@cloudflare/wrangler": "^1.13.0",
     "@types/body-parser": "^1.19.0",
-    "@types/cheerio": "^0.22.23",
+    "@types/cheerio": "^0.22.24",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.168",
