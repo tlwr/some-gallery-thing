@@ -7,7 +7,7 @@ describe('integration-tests', () => {
 
       console.info(events);
 
-      expect(events.length).toBeGreaterThan(8);
+      expect(events.length).toBeGreaterThan(5);
     });
   });
 });
