@@ -73,6 +73,7 @@ export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
   const opts = {
     url: `${baseURL}/exhibitions/exhibition/sort/current`,
     resolveWithFullResponse: true,
+    rejectUnauthorized: false,
   };
 
   const response = await request(opts);
