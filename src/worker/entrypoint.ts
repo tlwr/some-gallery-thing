@@ -4,7 +4,7 @@ import allEvents from '../../dist/events.json';
 
 const d = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/;
 
-function ds(k: string, v: string): any {
+function ds(k: string, v: string): unknown {
   if (typeof v === 'string' && d.test(v)) {
     return new Date(v);
   }
@@ -25,5 +25,5 @@ class StaticAllEventsCollector {
 const c = new AppController(new StaticAllEventsCollector());
 
 addEventListener(
-  'fetch', (e: any): void => e.respondWith(c.handle(e.request)),
+  'fetch', (e: any): void => e.respondWith(c.handle(e.request)), // eslint-disable-line @typescript-eslint/no-explicit-any
 );
