@@ -16,7 +16,7 @@ export function sortEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<G
     });
 }
 
-export class GalleryEventsComponent extends React.Component<GalleryEventsComponentProps, {}> {
+export class GalleryEventsComponent extends React.Component<GalleryEventsComponentProps, Record<string, never>> {
   public render(): React.ReactElement {
     return <html lang="en">
       <head>

@@ -38,7 +38,7 @@ export function niceCloseDate(d: Date): string {
   return md.format('[until] D MMM YYYY').toLowerCase();
 }
 
-export class GalleryEventComponent extends React.Component<GalleryEventComponentProps, {}> {
+export class GalleryEventComponent extends React.Component<GalleryEventComponentProps, Record<string, never>> {
   public render(): React.ReactElement {
     return <a className="event"
               href={link(this.props.event.gallery.website, this.props.event.website)}>

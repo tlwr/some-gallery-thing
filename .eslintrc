@@ -7,5 +7,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended"
   ],
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "^[A-Z]" }]
+  }
 }
