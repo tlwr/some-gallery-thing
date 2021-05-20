@@ -19,7 +19,7 @@ describe('collector', () => {
   });
 
   it('should scrape and parse events correctly', async () => {
-    const rawResp: any = [{
+    const rawResp: unknown = [{
       "command": "insert",
       "method": "replaceWith",
       "selector": ".view-dom-id-",
@@ -64,7 +64,7 @@ describe('collector', () => {
   });
 
   it('should skip events without dates', async () => {
-    const rawResp: any = [{
+    const rawResp: unknown = [{
       "command": "insert",
       "method": "replaceWith",
       "selector": ".view-dom-id-",

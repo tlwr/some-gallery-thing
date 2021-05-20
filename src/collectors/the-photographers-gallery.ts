@@ -4,6 +4,11 @@ import request from 'request-promise-native';
 
 import {Gallery, GalleryEvent} from '../types';
 
+interface AjaxCommand {
+  command: string;
+  method: string;
+}
+
 const tpgEventWebsitePrefix = 'https://thephotographersgallery.org.uk';
 
 const gallery: Gallery = {
@@ -65,7 +70,7 @@ export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
   const response = await request(opts);
 
   try {
-    const parsedResponse: ReadonlyArray<any> = JSON.parse(response.body);
+    const parsedResponse: ReadonlyArray<unknown> = JSON.parse(response.body);
 
     if (!Array.isArray(parsedResponse)) {
       throw new Error(
@@ -74,7 +79,7 @@ export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
     }
 
     const commands = parsedResponse.filter(
-      (c: any) => c.command === 'insert' && c.method === 'replaceWith',
+      (c: AjaxCommand) => c.command === 'insert' && c.method === 'replaceWith',
     );
 
     if (commands.length !== 1) {

@@ -48,7 +48,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
     if (dateText.indexOf('Until') >= 0) {
       closeDate = moment(dateText.replace(/Until/, '').trim(), 'DD MMM YYYY').toDate();
     } else {
-      const [openDateText, closeDateText, ..._] = dateText.split('–');
+      const closeDateText = dateText.split('–')[1];
       openDate = moment(openDate, 'DD MMM').toDate();
       closeDate = moment(closeDateText, 'DD MMM YYYY').toDate();
     }
