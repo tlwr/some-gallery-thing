@@ -360,7 +360,7 @@ describe('collector', () => {
     nockTate
       .get(/whats-on/)
       .reply(200, rawHTML);
-    ;
+    
 
     const events = await collect();
 
@@ -455,7 +455,7 @@ describe('collector', () => {
     nockTate
       .get(/whats-on/)
       .reply(404);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/404/);
   });
@@ -474,7 +474,7 @@ describe('collector', () => {
     nockTate
       .get(/whats-on/)
       .reply(200, rawHTML);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/Unknown gallery/);
   });

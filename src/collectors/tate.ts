@@ -44,7 +44,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
 
     const dateText = loadedElem('span.card__when--date').text();
     let openDate: Date | undefined = undefined;
-    let closeDate: Date | undefined = undefined;;
+    let closeDate: Date | undefined = undefined;
     if (dateText.indexOf('Until') >= 0) {
       closeDate = moment(dateText.replace(/Until/, '').trim(), 'DD MMM YYYY').toDate();
     } else {

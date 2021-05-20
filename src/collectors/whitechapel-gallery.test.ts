@@ -47,7 +47,7 @@ describe('collector', () => {
     nockWhitechapelGallery
       .get(/exhibitions/)
       .reply(200, rawHTML);
-    ;
+    
 
     const events = await collect();
 
@@ -106,7 +106,7 @@ describe('collector', () => {
     nockWhitechapelGallery
       .get(/exhibitions/)
       .reply(404);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/404/);
   });
@@ -115,7 +115,7 @@ describe('collector', () => {
     nockWhitechapelGallery
       .get(/exhibitions/)
       .reply(200, 'malformed response');
-    ;
+    
 
     const events = await collect();
 

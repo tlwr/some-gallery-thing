@@ -13,7 +13,7 @@ export function link (galleryWebsite: string, eventWebsite?: string): string {
   }
 
   return eventWebsite;
-};
+}
 
 export function niceCloseDate(d: Date): string {
   const md = moment(d);

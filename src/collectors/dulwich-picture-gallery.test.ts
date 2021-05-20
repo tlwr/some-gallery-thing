@@ -95,7 +95,7 @@ describe('collector', () => {
     nockDulwich
       .get(/WhatsOnPage/)
       .reply(200, rawHTML);
-    ;
+    
 
     const events = await collect();
 
@@ -150,7 +150,7 @@ describe('collector', () => {
     nockDulwich
       .get(/WhatsOnPage/)
       .reply(200, rawHTML);
-    ;
+    
 
     const events = await collect();
 
@@ -195,7 +195,7 @@ describe('collector', () => {
     nockDulwich
       .get(/WhatsOnPage/)
       .reply(200, rawHTML);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/Wrong number of dates/);
   });
@@ -225,7 +225,7 @@ describe('collector', () => {
     nockDulwich
       .get(/WhatsOnPage/)
       .reply(200, rawHTML);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/Could not find title/);
   });
@@ -259,7 +259,7 @@ describe('collector', () => {
     nockDulwich
       .get(/WhatsOnPage/)
       .reply(200, rawHTML);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/Wrong number of dates/);
   });
@@ -268,7 +268,7 @@ describe('collector', () => {
     nockDulwich
       .get(/WhatsOnPage/)
       .reply(404);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/404/);
   });
@@ -277,7 +277,7 @@ describe('collector', () => {
     nockDulwich
       .get(/WhatsOnPage/)
       .reply(200, 'malformed response');
-    ;
+    
 
     const events = await collect();
 

@@ -969,7 +969,7 @@ Contact: info@tintypegallery.com</p>
     nockTintype
       .get(/exhibitions/)
       .reply(200, rawHTML);
-    ;
+    
 
     const events = await collect();
 
@@ -1001,7 +1001,7 @@ Contact: info@tintypegallery.com</p>
     nockTintype
       .get(/exhibitions/)
       .reply(404);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/404/);
   });
@@ -1010,7 +1010,7 @@ Contact: info@tintypegallery.com</p>
     nockTintype
       .get(/exhibitions/)
       .reply(200, 'malformed response');
-    ;
+    
 
     const events = await collect();
 

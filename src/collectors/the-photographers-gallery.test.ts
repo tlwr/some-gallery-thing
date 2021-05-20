@@ -30,7 +30,7 @@ describe('collector', () => {
     nockPhotographersGallery
       .post(/views.ajax/)
       .reply(200, rawResp);
-    ;
+    
 
     const events = await collect();
 
@@ -75,7 +75,7 @@ describe('collector', () => {
     nockPhotographersGallery
       .post(/views.ajax/)
       .reply(200, rawResp);
-    ;
+    
 
     const events = await collect();
 
@@ -101,7 +101,7 @@ describe('collector', () => {
     nockPhotographersGallery
       .post(/views.ajax/)
       .reply(404);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/404/);
   });
@@ -110,7 +110,7 @@ describe('collector', () => {
     nockPhotographersGallery
       .post(/views.ajax/)
       .reply(200, 'malformed response');
-    ;
+    
 
     const events = await collect();
 
@@ -121,7 +121,7 @@ describe('collector', () => {
     nockPhotographersGallery
       .post(/views.ajax/)
       .reply(200, JSON.stringify({}));
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/weird AJAX commands/);
   });
@@ -130,7 +130,7 @@ describe('collector', () => {
     nockPhotographersGallery
       .post(/views.ajax/)
       .reply(200, JSON.stringify([]));
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/weird AJAX replace command/);
   });

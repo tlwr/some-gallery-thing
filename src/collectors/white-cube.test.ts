@@ -211,7 +211,7 @@ alt="top to bottom"></a></div>
     nockWhiteCube
       .get(/exhibitions.exhibition.sort.current/)
       .reply(200, rawHTML);
-    ;
+    
 
     const events = await collect();
 
@@ -245,7 +245,7 @@ alt="top to bottom"></a></div>
     nockWhiteCube
       .get(/exhibitions.exhibition.sort.current/)
       .reply(404);
-    ;
+    
 
     await expect(collect()).rejects.toThrow(/404/);
   });
@@ -254,7 +254,7 @@ alt="top to bottom"></a></div>
     nockWhiteCube
       .get(/exhibitions.exhibition.sort.current/)
       .reply(200, 'malformed response');
-    ;
+    
 
     const events = await collect();
 
