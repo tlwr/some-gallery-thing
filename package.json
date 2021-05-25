@@ -33,7 +33,7 @@
     "@types/cheerio": "^0.22.29",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.23",
-    "@types/lodash": "^4.14.169",
+    "@types/lodash": "^4.14.170",
     "@types/nock": "^11.1.0",
     "@types/node": "^15.6.1",
     "@types/node-fetch": "^2.5.10",
