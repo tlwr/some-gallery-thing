@@ -1,5 +1,4 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import { Request, Response } from "node-fetch";
 
 
@@ -20,9 +19,6 @@ app.use(pino({
     levelFirst: false,
   },
 }));
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 const collector = isProduction()
   ? /* istanbul ignore next */collectors.All
