@@ -55,7 +55,7 @@
     "express-prom-bundle": "^6.3.6",
     "extract-loader": "^5.1.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.0.5",
+    "jest": "^27.0.6",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "nock": "^13.1.0",
