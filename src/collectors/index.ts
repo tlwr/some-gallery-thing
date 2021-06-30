@@ -25,7 +25,7 @@ class AllCollector {
         dpg(),
         gasworks(),
         tate(),
-        thePhotographersGallery(),
+        // thePhotographersGallery(),
         whitechapelGallery(),
         whiteCube(),
       ])
