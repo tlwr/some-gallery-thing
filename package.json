@@ -34,7 +34,7 @@
     "@types/jest": "^26.0.24",
     "@types/lodash": "^4.14.170",
     "@types/nock": "^11.1.0",
-    "@types/node": "^15.14.0",
+    "@types/node": "^16.0.1",
     "@types/node-fetch": "^2.5.10",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
