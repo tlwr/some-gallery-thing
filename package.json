@@ -46,7 +46,7 @@
     "@typescript-eslint/parser": "^4.28.3",
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^6.2.0",
-    "css-loader": "^6.0.0",
+    "css-loader": "^6.1.0",
     "css-modules-typescript-loader": "^4.0.1",
     "eslint": "^7.30.0",
     "eslint-plugin-react": "^7.24.0",
