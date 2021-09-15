@@ -39,6 +39,7 @@ export function niceCloseDate(d: Date): string {
 }
 
 export class GalleryEventComponent extends React.Component<GalleryEventComponentProps, Record<string, never>> {
+  // istanbul ignore next
   public render(): React.ReactElement {
     return <a className="event"
               href={link(this.props.event.gallery.website, this.props.event.website)}>

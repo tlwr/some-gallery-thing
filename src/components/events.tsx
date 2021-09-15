@@ -17,6 +17,7 @@ export function sortEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<G
 }
 
 export class GalleryEventsComponent extends React.Component<GalleryEventsComponentProps, Record<string, never>> {
+  // istanbul ignore next
   public render(): React.ReactElement {
     return <html lang="en">
       <head>
@@ -49,6 +50,7 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
     </html>;
   }
 
+  // istanbul ignore next
   public renderEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<React.ReactElement> {
     return Array
       .from(events)
