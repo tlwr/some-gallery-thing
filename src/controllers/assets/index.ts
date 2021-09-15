@@ -7,6 +7,7 @@ export class AssetsController {
     return Promise.resolve(new Response(mainCSS.toString(), {
       headers: {
         'Content-Type': 'text/css',
+        'Cache-Control': 'max-age=86400, public',
       },
     }));
   }

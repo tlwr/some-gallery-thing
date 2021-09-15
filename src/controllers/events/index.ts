@@ -25,7 +25,10 @@ export class EventsController {
 
     return new Response(
       responseBody, {
-        headers: { 'Content-Type': 'text/html' },
+        headers: {
+          'Content-Type': 'text/html',
+          'Cache-Control': 'max-age=900, public',
+        },
       },
     );
   }
