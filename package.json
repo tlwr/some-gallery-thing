@@ -36,7 +36,7 @@
     "@types/nock": "^11.1.0",
     "@types/node": "^16.7.10",
     "@types/node-fetch": "^2.5.12",
-    "@types/react": "^17.0.20",
+    "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
     "@types/request": "^2.48.7",
     "@types/request-promise-native": "^1.0.18",
