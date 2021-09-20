@@ -12,13 +12,7 @@ import {isProduction} from './utils';
 export const app = express();
 
 app.set("port", process.env.PORT || 8080);
-
-app.use(pino({
-  prettyPrint: {
-    colorize: true,
-    levelFirst: false,
-  },
-}));
+app.use(pino());
 
 const collector = isProduction()
   ? /* istanbul ignore next */collectors.All
