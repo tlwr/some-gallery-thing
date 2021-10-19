@@ -1,5 +1,6 @@
 const path = require('path');
 const NodemonPlugin = require('nodemon-webpack-plugin');
+const webpack = require('webpack');
 
 const commonConfig = {
   module: {
@@ -74,7 +75,6 @@ if (process.env.NODE_ENV === 'compile') {
       ...commonConfig.resolve,
       alias: {
         'assert': 'assert',
-        'buffer': 'buffer',
         'crypto': 'crypto-browserify',
         'http': 'stream-http',
         'https': 'https-browserify',
@@ -82,7 +82,12 @@ if (process.env.NODE_ENV === 'compile') {
         'url': 'url',
         'zlib': 'browserify-zlib',
       },
-    }
+    },
+
+    plugins: [
+      new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] }),
+      new webpack.ProvidePlugin({ process: ['process'] }),
+    ],
   };
 
   module.exports = [
