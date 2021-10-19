@@ -25,7 +25,7 @@ const commonConfig = {
       '.tsx', '.ts',
       '.jsx', '.js',
       '.scss', '.css',
-    ]
+    ],
   },
 
   plugins: [],
@@ -69,6 +69,20 @@ if (process.env.NODE_ENV === 'compile') {
     },
 
     target: 'web',
+
+    resolve: {
+      ...commonConfig.resolve,
+      alias: {
+        'assert': 'assert',
+        'buffer': 'buffer',
+        'crypto': 'crypto-browserify',
+        'http': 'stream-http',
+        'https': 'https-browserify',
+        'stream': 'stream-browserify',
+        'url': 'url',
+        'zlib': 'browserify-zlib',
+      },
+    }
   };
 
   module.exports = [
