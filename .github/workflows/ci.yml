@@ -20,7 +20,3 @@ jobs:
       - run: npm run test
 
       - run: npm run lint
-
-      - run: npm run test:integration
-
-      - run: npm run compile
