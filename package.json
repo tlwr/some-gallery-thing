@@ -6,7 +6,7 @@
   "scripts": {
     "publish": "wrangler publish",
     "stub-events-unless-exist": "mkdir -p dist && test -e dist/events.json || echo '{\"events\":[]}' > dist/events.json",
-    "scrape": "mkdir -p dist && ts-node src/worker/generate-events-json.ts > dist/events.json",
+    "scrape-events": "mkdir -p dist && ts-node src/worker/generate-events-json.ts > dist/events.json",
     "upload-events": "wrangler kv:key put --namespace-id dcaf7936e99146af92a7c80773d31512 latest-events \"$(cat dist/events.json)\"",
     "print-events": "wrangler kv:key get --namespace-id dcaf7936e99146af92a7c80773d31512 latest-events",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests --testPathIgnorePatterns smoke-tests",

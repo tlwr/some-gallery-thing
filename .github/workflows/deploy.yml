@@ -28,7 +28,7 @@ jobs:
 
       - run: npm run compile
 
-      - run: npm run scrape
+      - run: npm run scrape-events
 
       - run: npm run upload-events
         env:
