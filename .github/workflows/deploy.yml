@@ -28,6 +28,10 @@ jobs:
 
       - run: npm run compile
 
+      - run: npm run scrape
+
+      - run: npm run upload-events
+
       - run: npm run publish
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}

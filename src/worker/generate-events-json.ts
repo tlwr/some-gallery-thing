@@ -11,7 +11,7 @@ collectors
   })
   .then((events: ReadonlyArray<GalleryEvent>) => {
     console.error('Collected events, writing to STDOUT');
-    console.log(JSON.stringify({events: events}));
+    console.log(JSON.stringify(events));
     console.error('Wrote events to STDOUT');
     process.exit(0);
   })
