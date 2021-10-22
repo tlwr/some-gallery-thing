@@ -31,6 +31,9 @@ jobs:
       - run: npm run scrape
 
       - run: npm run upload-events
+        env:
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+          CF_EMAIL: ${{secrets.CF_EMAIL }}
 
       - run: npm run publish
         env:
