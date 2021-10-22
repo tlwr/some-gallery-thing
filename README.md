@@ -11,7 +11,8 @@
 # workflow
 
 1. GHA runs a CI pipeline which compiles TS to scrape gallery websites
-1. GHA packs gallery event results and TS code into JS bundle
+1. GHA compiles TS code into JS bundle
+1. GHA uses wrangler to upload events JSON to Cloudflare KV
 1. GHA uses wrangler to deploy JS bundle to Cloudflare workers
 1. Cloudflare worker hosts [some-gallery-thing.toby.codes](https://some-gallery-thing.toby.codes)
 
