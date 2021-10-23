@@ -53,7 +53,11 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
 
           <footer className="footer">
             <ul>
-              <li>website by <a href="http://soniaturcotte.com/">sonia turcotte</a> and <a href="https://toby.codes/">tlwr</a></li>
+              <li>
+                {this.localise('website by')} <>
+                </><a href="http://soniaturcotte.com/">sonia turcotte</a> <>
+                </>{this.localise('and')} <>
+                </><a href="https://toby.codes/">tlwr</a></li>
               <li><a href="https://github.com/tlwr/some-gallery-thing">github</a></li>
               <li><a href="https://www.instagram.com/somegallerything/">instagram</a></li>
             </ul>
@@ -68,7 +72,23 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
   public renderEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<React.ReactElement> {
     return Array
       .from(events)
-      .map((e, i) => <GalleryEventComponent key={i} event={e}/>)
+      .map((e, i) => <GalleryEventComponent key={i} event={e} city={this.props.city}/>)
     ;
+  }
+
+  // istanbul ignore next
+  private localise(s: string): string {
+    const i18n : {[key: string]: {[key: string]: string}}  = {
+      london: {
+        'website by': 'website by',
+        'and': 'and',
+      },
+      amsterdam: {
+        'website by': 'website door',
+        'and': 'en',
+      },
+    };
+
+    return i18n[this.props.city][s];
   }
 }

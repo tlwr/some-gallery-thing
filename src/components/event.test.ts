@@ -15,36 +15,57 @@ describe('GalleyEventComponent', () => {
     });
   });
 
-  describe('niceCloseDate', () => {
-    const today = moment();
-    const tomorrow = moment().add(1, 'days');
-    const thisWeek = moment().add(4, 'days');
-    const nextWeek = moment().add(8, 'days');
+  ['london', 'amsterdam'].forEach(city => {
+    const untilToday = {
+      london: 'until today',
+      amsterdam: 't/m vandaag',
+    }[city];
 
+    const untilTomorrow = {
+      london: 'until tomorrow',
+      amsterdam: 't/m morgen',
+    }[city];
 
-    it('should return today', () => {
-      const until = niceCloseDate(today.toDate());
-      expect(until).toBe('until today');
-    });
+    const u = {
+      london: 'until',
+      amsterdam: 't/m',
+    }[city];
 
-    it('should return tomorrow', () => {
-      const until = niceCloseDate(tomorrow.toDate());
-      expect(until).toBe('until tomorrow');
-    });
+    const locale = {
+      london: 'en-gb',
+      amsterdam: 'nl',
+    }[city];
 
-    it('should return the day of the week', () => {
-      const until = niceCloseDate(thisWeek.toDate());
-      expect(until).toBe(
-        `until ${thisWeek.format('dddd')}`.toLowerCase(),
-      );
-    });
+    describe('niceCloseDate', () => {
+      const today = moment();
+      const tomorrow = moment().locale(locale).add(1, 'days');
+      const thisWeek = moment().locale(locale).add(4, 'days');
+      const nextWeek = moment().locale(locale).add(8, 'days');
 
-    it('should return the day of the week and the date', () => {
-      const until = niceCloseDate(nextWeek.toDate());
+      it('should return today', () => {
+        const until = niceCloseDate(today.toDate(), city);
+        expect(until).toBe(untilToday);
+      });
 
-      expect(until).toBe(
-        `until ${nextWeek.format('D MMM YYYY')}`.toLowerCase(),
-      );
+      it('should return tomorrow', () => {
+        const until = niceCloseDate(tomorrow.toDate(), city);
+        expect(until).toBe(untilTomorrow);
+      });
+
+      it('should return the day of the week', () => {
+        const until = niceCloseDate(thisWeek.toDate(), city);
+        expect(until).toBe(
+          `${u} ${thisWeek.format('dddd')}`.toLowerCase(),
+        );
+      });
+
+      it('should return the day of the week and the date', () => {
+        const until = niceCloseDate(nextWeek.toDate(), city);
+
+        expect(until).toBe(
+          `${u} ${nextWeek.format('D MMM YYYY')}`.toLowerCase(),
+        );
+      });
     });
   });
 });
