@@ -116,6 +116,12 @@ header {
         font-weight: bold;
         text-decoration: none;
         text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+          background-color: $s-pink;
+          color: $s-black;
+        }
       }
 
       &.active {
@@ -125,10 +131,6 @@ header {
           color: $s-black;
           cursor: default;
           pointer-events: none;
-
-          &:hover {
-            background-color: $s-white;
-          }
         }
       }
     }
