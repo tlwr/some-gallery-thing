@@ -1,3 +1,4 @@
+// sass-lint:disable nesting-depth
 @import url('https://rsms.me/inter/inter.css'); // sass-lint:disable-line no-url-domains no-url-protocols
 
 html { font-family: 'Inter', sans-serif; }
@@ -30,7 +31,6 @@ body {
   }
 
 .footer {
-
   ul {
     list-style-type: none;
     padding: 0;
@@ -42,7 +42,7 @@ body {
 
     &:not(:first-child) {
       float: right;
-      padding-left: 0.5rem;
+      padding-left: .5rem;
       padding-right: 0;
     }
 
@@ -85,14 +85,65 @@ header {
   color: $s-white;
   margin: calc($outline-thickness / 2);
   outline: $outline-thickness solid $s-white;
-  padding: 1rem;
+  padding: 0;
 
   h1 {
+    border-bottom: 4px solid $s-white;
+    box-sizing: border-box;
     font-size: 8.5vw;
     line-height: 1;
     margin: 0;
+    padding: 1rem;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      box-sizing: border-box;
+      padding: 1rem;
+      text-align: center;
+      width: 50%;
+
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      &.active {
+        background-color: $s-white;
+
+        a {
+          color: $s-black;
+          cursor: default;
+          pointer-events: none;
+
+          &:hover {
+            background-color: $s-white;
+          }
+        }
+      }
+
+      &.disabled {
+        a {
+          cursor: wait;
+          pointer-events: none;
+        }
+
+        span {
+          font-style: italic;
+          font-weight: 100;
+        }
+      }
+    }
   }
 }
 
@@ -164,6 +215,12 @@ header {
     h1 {
       font-size: 8vw;
     }
+
+    li {
+      a {
+        font-size: 4vw;
+      }
+    }
   }
 
   .event {
@@ -189,6 +246,12 @@ header {
     h1 {
       font-size: 8.3vw;
     }
+
+    li {
+      a {
+        font-size: 4.2vw;
+      }
+    }
   }
 
   .footer {
@@ -206,6 +269,12 @@ header {
   .header {
     h1 {
       font-size: 5.14rem;
+    }
+
+    li {
+      a {
+        font-size: 2.62rem;
+      }
     }
   }
 }

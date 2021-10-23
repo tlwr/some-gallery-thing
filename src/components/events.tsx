@@ -32,6 +32,10 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
         <div className="">
           <header className="header">
             <h1>some gallery thing</h1>
+            <ul>
+              <li className="active"><a href="/london">london</a></li>
+              <li className="disabled"><a href="/amsterdam">amsterdam</a> <span>(soon)</span></li>
+            </ul>
           </header>
 
           <main className="grid-container">
