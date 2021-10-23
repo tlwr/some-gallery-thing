@@ -12,6 +12,10 @@
     "upload-events": "wrangler kv:key put --namespace-id dcaf7936e99146af92a7c80773d31512 latest-events \"$(cat dist/events.json)\"",
     "print-events": "wrangler kv:key get --namespace-id dcaf7936e99146af92a7c80773d31512 latest-events",
 
+    "build-css": "mkdir -p dist && sass src/css/*.scss dist/styles.css",
+    "upload-css": "wrangler kv:key put --namespace-id dcaf7936e99146af92a7c80773d31512 styles \"$(cat dist/styles.css)\"",
+    "print-css": "wrangler kv:key get --namespace-id dcaf7936e99146af92a7c80773d31512 styles",
+
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests --testPathIgnorePatterns smoke-tests",
     "test:integration": "NODE_ENV=test jest --testTimeout 30000 --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
     "test:smoke": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern smoke-tests",

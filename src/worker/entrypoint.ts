@@ -1,7 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare const ASSETS: any; // cloudflare KV namespace
 
-import {AppController} from '../controllers/app';
+import URI from 'urijs';
+
+import {EventsController} from '../controllers/events';
 import {GalleryEvent} from '../types';
 
 const d = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/;
@@ -22,8 +24,32 @@ class CFKVEventsCollector {
   }
 }
 
-const c = new AppController(new CFKVEventsCollector());
+const c = new EventsController(new CFKVEventsCollector());
 
-addEventListener(
-  'fetch', (e: any): void => e.respondWith(c.handle(e.request)), // eslint-disable-line @typescript-eslint/no-explicit-any
-);
+const handle = async (request: any) : Promise<any> => {
+  const path = new URI(request.url).pathname();
+
+  if (path === '/assets/main.css') {
+    const styles = await ASSETS.get('styles');
+
+    const response = new Response(
+      styles,
+      {
+        headers: {
+          'Content-Type': 'text/css',
+          'Cache-Control': 'max-age=86400, public',
+        },
+      }
+    );
+
+    return response
+  }
+
+  if (path === '/events') {
+      return await c.handleListEvents(request);
+  }
+
+  return new Response('', {status: 302, headers: {'Location': '/events'}})
+};
+
+addEventListener('fetch', (e : any) : void => e.respondWith(handle(e.request)));
