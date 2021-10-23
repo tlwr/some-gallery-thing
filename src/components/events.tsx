@@ -41,6 +41,7 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
           <footer className="footer">
             <ul>
               <li>website by <a href="http://soniaturcotte.com/">sonia turcotte</a> and <a href="https://toby.codes/">tlwr</a></li>
+              <li><a href="https://github.com/tlwr/some-gallery-thing">github</a></li>
               <li><a href="https://www.instagram.com/somegallerything/">instagram</a></li>
             </ul>
         </footer>
