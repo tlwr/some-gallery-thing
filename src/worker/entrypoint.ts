@@ -16,15 +16,15 @@ function ds(k: string, v: string): unknown {
   return v;
 }
 
-class CFKVEventsCollector {
+class LondonCFKVEventsCollector {
   async collect(): Promise<ReadonlyArray<GalleryEvent>> {
     const rawEventsJSON = await ASSETS.get('latest-events');
-    const events = JSON.parse(rawEventsJSON, ds); // Parse whilst deserialising dates into dates
+    const events = JSON.parse(rawEventsJSON, ds).london; // Parse whilst deserialising dates into dates
     return events;
   }
 }
 
-const c = new EventsController(new CFKVEventsCollector());
+const londonEventsController = new EventsController(new LondonCFKVEventsCollector());
 
 const handle = async (request: any) : Promise<any> => {
   const path = new URI(request.url).pathname();
@@ -46,10 +46,18 @@ const handle = async (request: any) : Promise<any> => {
   }
 
   if (path === '/events') {
-      return await c.handleListEvents(request);
+    return new Response('', {status: 302, headers: {'Location': '/london'}})
   }
 
-  return new Response('', {status: 302, headers: {'Location': '/events'}})
+  if (path === '/london') {
+    return await londonEventsController.handleListEvents(request);
+  }
+
+  if (path === '/amsterdam') {
+    return new Response('', {status: 302, headers: {'Location': '/london'}})
+  }
+
+  return new Response('', {status: 302, headers: {'Location': '/london'}})
 };
 
 addEventListener('fetch', (e : any) : void => e.respondWith(handle(e.request)));
