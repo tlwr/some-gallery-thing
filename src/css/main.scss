@@ -10,6 +10,8 @@ $s-pink: #ff1493;
 $s-white: #fefefe;
 $s-black: #222;
 
+$outline-thickness: 4px;
+
 html,
 body {
   background-color: $s-black;
@@ -17,7 +19,7 @@ body {
 
 body {
   color: $s-white;
-  margin: 0 auto;
+  margin: $outline-thickness auto;
   max-width: 960px;
 }
 
@@ -80,8 +82,8 @@ a {
 
 header {
   color: $s-white;
-  margin: 2px;
-  outline: 4px solid $s-white;
+  margin: calc($outline-thickness / 2);
+  outline: $outline-thickness solid $s-white;
   padding: 1rem;
 
   h1 {
@@ -96,8 +98,8 @@ header {
 
 .event {
   color: $s-white;
-  margin: 2px;
-  outline: 4px solid $s-white;
+  margin: calc($outline-thickness / 2);
+  outline: $outline-thickness solid $s-white;
   padding: 1rem;
   position: relative;
   text-decoration: none;
