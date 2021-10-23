@@ -4,20 +4,24 @@
   "description": "a web application for finding galleries",
   "main": "dist/compiled.js",
   "scripts": {
+    "compile": "NODE_ENV=compile webpack --config webpack.config.js",
     "publish": "wrangler publish",
+
     "stub-events-unless-exist": "mkdir -p dist && test -e dist/events.json || echo '{\"events\":[]}' > dist/events.json",
     "scrape-events": "mkdir -p dist && ts-node src/worker/generate-events-json.ts > dist/events.json",
     "upload-events": "wrangler kv:key put --namespace-id dcaf7936e99146af92a7c80773d31512 latest-events \"$(cat dist/events.json)\"",
     "print-events": "wrangler kv:key get --namespace-id dcaf7936e99146af92a7c80773d31512 latest-events",
+
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --coverage --verbose --testPathIgnorePatterns integration-tests --testPathIgnorePatterns smoke-tests",
     "test:integration": "NODE_ENV=test jest --testTimeout 30000 --forceExit --detectOpenHandles --verbose --testPathPattern integration-tests",
     "test:smoke": "NODE_ENV=test jest --forceExit --detectOpenHandles --verbose --testPathPattern smoke-tests",
+
     "build": "npm run stub-events-unless-exist && NODE_ENV=${NODE_ENV:-development} webpack --config webpack.config.js",
-    "compile": "NODE_ENV=compile webpack --config webpack.config.js",
+    "watch": "npm run stub-events-unless-exist && npm run build && NODE_ENV=${NODE_ENV:-development} ENABLE_WATCH=true webpack --config webpack.config.js",
+
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:ts": "eslint src/*.* src/**/*.*",
-    "lint:css": "sass-lint src/**/*.scss --verbose --max-warnings 0",
-    "watch": "npm run stub-events-unless-exist && npm run build && NODE_ENV=${NODE_ENV:-development} ENABLE_WATCH=true webpack --config webpack.config.js"
+    "lint:css": "sass-lint src/**/*.scss --verbose --max-warnings 0"
   },
   "repository": {
     "type": "git",
