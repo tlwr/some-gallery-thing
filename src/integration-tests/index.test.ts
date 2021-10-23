@@ -10,4 +10,14 @@ describe('integration-tests', () => {
       expect(events.length).toBeGreaterThan(5);
     });
   });
+
+  describe('amsterdam', () => {
+    it('should collect some events', async () => {
+      const events = await collectors.Amsterdam.collect();
+
+      console.info(events);
+
+      expect(events.length).toBeGreaterThan(5);
+    });
+  });
 });

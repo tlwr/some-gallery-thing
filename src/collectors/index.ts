@@ -11,6 +11,8 @@ import {collect as thePhotographersGallery} from './the-photographers-gallery';
 import {collect as whitechapelGallery} from './whitechapel-gallery';
 import {collect as whiteCube} from './white-cube';
 
+import {collect as rijksmuseum} from './rijksmuseum';
+
 class StubCollector {
   async collect(): Promise<ReadonlyArray<GalleryEvent>> {
     return Promise.resolve(exampleEvents);
@@ -37,7 +39,9 @@ class LondonCollector {
 // istanbul ignore next
 class AmsterdamCollector {
   async collect(): Promise<ReadonlyArray<GalleryEvent>> {
-    const allEvents = await Promise.all([]);
+    const allEvents = await Promise.all([
+      rijksmuseum(),
+    ]);
 
     return lodash.flatten(allEvents);
   }
