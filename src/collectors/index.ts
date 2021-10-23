@@ -18,7 +18,7 @@ class StubCollector {
 }
 
 // istanbul ignore next
-class AllCollector {
+class LondonCollector {
   async collect(): Promise<ReadonlyArray<GalleryEvent>> {
     const allEvents = await Promise
       .all([
@@ -35,6 +35,15 @@ class AllCollector {
 }
 
 // istanbul ignore next
+class AmsterdamCollector {
+  async collect(): Promise<ReadonlyArray<GalleryEvent>> {
+    const allEvents = await Promise.all([]);
+
+    return lodash.flatten(allEvents);
+  }
+}
+
+// istanbul ignore next
 export default {
   DulwichPictureGallery: dpg,
   Gasworks: gasworks,
@@ -45,5 +54,6 @@ export default {
   WhiteCube: whiteCube,
 
   Stub: new StubCollector(),
-  All: new AllCollector(),
+  London: new LondonCollector(),
+  Amsterdam: new AmsterdamCollector(),
 };
