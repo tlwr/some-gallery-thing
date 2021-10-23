@@ -21,8 +21,13 @@ const londonCollector = isProduction()
   ? /* istanbul ignore next */collectors.London
   : collectors.Stub;
 
+const amsterdamCollector = isProduction()
+  ? /* istanbul ignore next */collectors.Amsterdam
+  : collectors.Stub;
+
 const assetsController = new AssetsController();
-const londonEventsController = new EventsController(londonCollector);
+const londonEventsController = new EventsController('london', londonCollector);
+const amsterdamEventsController = new EventsController('amsterdam', amsterdamCollector);
 
 app.get('/*', async (req: express.Request, res: express.Response) => {
   const fullURL = req.protocol + '://' + req.get('host') + req.originalUrl;
@@ -44,7 +49,7 @@ app.get('/*', async (req: express.Request, res: express.Response) => {
       break;
 
     case '/amsterdam':
-      response = new Response('', {status: 302, headers: { 'Location': '/london' }});
+      response = await amsterdamEventsController.handleListEvents(request);
       break;
 
     default:

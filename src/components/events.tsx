@@ -6,6 +6,7 @@ import {truncateEven} from '../utils';
 
 export interface GalleryEventsComponentProps {
   events: ReadonlyArray<GalleryEvent>;
+  city: string;
 }
 
 export function sortEvents(events: ReadonlyArray<GalleryEvent>): ReadonlyArray<GalleryEvent> {
@@ -33,8 +34,16 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
           <header className="header">
             <h1>some gallery thing</h1>
             <ul>
-              <li className="active"><a href="/london">london</a></li>
-              <li className="disabled"><a href="/amsterdam">amsterdam</a> <span>(soon)</span></li>
+              {
+                this.props.city === 'london' ?
+                <li className="active"><a href="/london">london</a></li> :
+                <li><a href="/london">london</a></li>
+              }
+              {
+                this.props.city === 'amsterdam' ?
+                <li className="active"><a href="/amsterdam">amsterdam</a></li> :
+                <li><a href="/amsterdam">amsterdam</a> <span>(soon)</span></li>
+              }
             </ul>
           </header>
 

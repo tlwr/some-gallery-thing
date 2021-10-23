@@ -131,18 +131,6 @@ header {
           }
         }
       }
-
-      &.disabled {
-        a {
-          cursor: wait;
-          pointer-events: none;
-        }
-
-        span {
-          font-style: italic;
-          font-weight: 100;
-        }
-      }
     }
   }
 }

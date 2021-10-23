@@ -11,8 +11,10 @@ import { GalleryEventsComponent } from "../../components";
 
 export class EventsController {
   private collector: GalleryCollector;
+  private city: string;
 
-  public constructor(collector: GalleryCollector) {
+  public constructor(city: string, collector: GalleryCollector) {
+    this.city = city;
     this.collector = collector;
   }
 
@@ -20,7 +22,7 @@ export class EventsController {
     const events = await this.collector.collect();
 
     const responseBody = `<!DOCTYPE HTML>${ReactDOM.renderToString(
-      React.createElement(GalleryEventsComponent, {events})
+      React.createElement(GalleryEventsComponent, {city: this.city, events})
     )}`;
 
     return new Response(

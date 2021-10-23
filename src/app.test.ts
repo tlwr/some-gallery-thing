@@ -19,11 +19,17 @@ describe('app', () => {
     ;
   });
 
-  it('should redirect /amsterdam to /london', async () => {
+  it('should serve events on /amsterdam', async () => {
     await request(app)
       .get('/amsterdam')
-      .expect(302)
-      .expect('Location', /\/london/)
+      .expect(200)
+    ;
+  });
+
+  it('should serve events on /london', async () => {
+    await request(app)
+      .get('/london')
+      .expect(200)
     ;
   });
 
