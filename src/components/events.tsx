@@ -42,7 +42,7 @@ export class GalleryEventsComponent extends React.Component<GalleryEventsCompone
               {
                 this.props.city === 'amsterdam' ?
                 <li className="active"><a href="/amsterdam">amsterdam</a></li> :
-                <li><a href="/amsterdam">amsterdam</a> <span>(soon)</span></li>
+                <li><a href="/amsterdam">amsterdam</a></li>
               }
             </ul>
           </header>
