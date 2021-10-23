@@ -1,9 +1,9 @@
 import collectors from '../collectors';
 
 describe('integration-tests', () => {
-  describe('collectors', () => {
+  describe('london', () => {
     it('should collect some events', async () => {
-      const events = await collectors.All.collect();
+      const events = await collectors.London.collect();
 
       console.info(events);
 
