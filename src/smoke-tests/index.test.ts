@@ -8,8 +8,8 @@ const headers = {
 };
 
 describe('smoke-tests', () => {
-  describe('events', () => {
-    const url = `${baseURL}/events`;
+  describe('london', () => {
+    const url = `${baseURL}/london`;
 
     it('should serve a page with events present', async () => {
       const response = await request({
