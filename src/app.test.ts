@@ -3,11 +3,27 @@ import request from 'supertest';
 import {app} from './app';
 
 describe('app', () => {
-  it('should redirect / to /events', async () => {
+  it('should redirect / to /london', async () => {
     await request(app)
       .get('/')
       .expect(302)
-      .expect('Location', /\/events/)
+      .expect('Location', /\/london/)
+    ;
+  });
+
+  it('should redirect /events to /london', async () => {
+    await request(app)
+      .get('/events')
+      .expect(302)
+      .expect('Location', /\/london/)
+    ;
+  });
+
+  it('should redirect /amsterdam to /london', async () => {
+    await request(app)
+      .get('/amsterdam')
+      .expect(302)
+      .expect('Location', /\/london/)
     ;
   });
 

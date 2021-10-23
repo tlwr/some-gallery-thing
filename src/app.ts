@@ -17,12 +17,12 @@ export const app = express();
 app.set("port", process.env.PORT || 8080);
 app.use(pino());
 
-const collector = isProduction()
-  ? /* istanbul ignore next */collectors.All
+const londonCollector = isProduction()
+  ? /* istanbul ignore next */collectors.London
   : collectors.Stub;
 
 const assetsController = new AssetsController();
-const eventsController = new EventsController(collector);
+const londonEventsController = new EventsController(londonCollector);
 
 app.get('/*', async (req: express.Request, res: express.Response) => {
   const fullURL = req.protocol + '://' + req.get('host') + req.originalUrl;
@@ -36,11 +36,19 @@ app.get('/*', async (req: express.Request, res: express.Response) => {
       break;
 
     case '/events':
-      response = await eventsController.handleListEvents(request);
+      response = new Response('', {status: 302, headers: { 'Location': '/london' }});
+      break;
+
+    case '/london':
+      response = await londonEventsController.handleListEvents(request);
+      break;
+
+    case '/amsterdam':
+      response = new Response('', {status: 302, headers: { 'Location': '/london' }});
       break;
 
     default:
-      response = new Response('', {status: 302, headers: { 'Location': '/events' }});
+      response = new Response('', {status: 302, headers: { 'Location': '/london' }});
   }
 
   for (const header in response.headers.raw()) {

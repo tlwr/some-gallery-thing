@@ -2,10 +2,10 @@ import request from 'supertest';
 
 import {app} from '../../app';
 
-describe('events', () => {
+describe('london', () => {
   it('should include the title', async () => {
     await request(app)
-      .get('/events')
+      .get('/london')
       .expect(200)
       .expect(/some gallery thing/i)
     ;
@@ -13,7 +13,7 @@ describe('events', () => {
 
   it('should include an event name', async () => {
     await request(app)
-      .get('/events')
+      .get('/london')
       .expect(200)
       .expect(/Van Gogh and Britain/i)
     ;
@@ -21,7 +21,7 @@ describe('events', () => {
 
   it('should include a gallery name', async () => {
     await request(app)
-      .get('/events')
+      .get('/london')
       .expect(200)
       .expect(/Tate Britain/i)
     ;
