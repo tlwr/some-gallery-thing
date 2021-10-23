@@ -8,24 +8,26 @@ const headers = {
 };
 
 describe('smoke-tests', () => {
-  describe('london', () => {
-    const url = `${baseURL}/london`;
+  ['london', 'amsterdam'].forEach(city => {
+    describe(city, () => {
+      const url = `${baseURL}/${city}`;
 
-    it('should serve a page with events present', async () => {
-      const response = await request({
-        url, headers,
-        resolveWithFullResponse: true,
+      it('should serve a page with events present', async () => {
+        const response = await request({
+          url, headers,
+          resolveWithFullResponse: true,
+        });
+
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toMatch(/<main/);
+
+        const html = cheerio.load(response.body);
+        const events = html('.event');
+        const images = html('img');
+
+        expect(events.length).toBeGreaterThan(0);
+        expect(images.length).toBeGreaterThan(0);
       });
-
-      expect(response.statusCode).toEqual(200);
-      expect(response.body).toMatch(/<main/);
-
-      const html = cheerio.load(response.body);
-      const events = html('.event');
-      const images = html('img');
-
-      expect(events.length).toBeGreaterThan(0);
-      expect(images.length).toBeGreaterThan(0);
     });
   });
 
