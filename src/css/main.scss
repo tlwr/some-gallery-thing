@@ -51,6 +51,7 @@ body {
       &:focus {
         background-color: $s-pink;
         color: $s-black;
+        outline-width: 0;
       }
     }
   }
@@ -121,6 +122,7 @@ header {
         &:focus {
           background-color: $s-pink;
           color: $s-black;
+          outline-width: 0;
         }
       }
 
