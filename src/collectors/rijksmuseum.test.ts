@@ -2492,7 +2492,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/68365e3c-56ca-45ac-bb3d-b04114dff82e?w=633&h=540&fx=2133&fy=956&c=5ddc03f7b4bef6aa7a75627f8f2bf55871fd773f1d0d0fd717dfb9676b13903a',
     }, {
       title: 'Ellsworth Kelly',
-      closeDate: moment('2021-10-24').toDate(),
+      closeDate: moment('2022-10-24').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
