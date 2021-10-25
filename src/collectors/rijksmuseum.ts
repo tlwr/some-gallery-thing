@@ -34,7 +34,7 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
       return;
     }
 
-    const rawDate = subtitle.replace(/.*t\/m/, '').trim();
+    const rawDate = subtitle.replace(/.*t\/m/i, '').trim();
     let closeDate = moment(rawDate, 'DD MMM YYYY', 'nl');
 
     const today = moment()
