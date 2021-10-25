@@ -11,6 +11,7 @@ import {collect as thePhotographersGallery} from './the-photographers-gallery';
 import {collect as whitechapelGallery} from './whitechapel-gallery';
 import {collect as whiteCube} from './white-cube';
 
+import {collect as foam} from './foam';
 import {collect as rijksmuseum} from './rijksmuseum';
 import {collect as stedelijk} from './stedelijk';
 
@@ -41,6 +42,7 @@ class LondonCollector {
 class AmsterdamCollector {
   async collect(): Promise<ReadonlyArray<GalleryEvent>> {
     const allEvents = await Promise.all([
+      foam(),
       rijksmuseum(),
       stedelijk(),
     ]);
