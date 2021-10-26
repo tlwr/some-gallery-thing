@@ -14,6 +14,7 @@ import {collect as whiteCube} from './white-cube';
 import {collect as foam} from './foam';
 import {collect as rijksmuseum} from './rijksmuseum';
 import {collect as stedelijk} from './stedelijk';
+import {collect as vangogh} from './van-gogh';
 
 class StubCollector {
   async collect(): Promise<ReadonlyArray<GalleryEvent>> {
@@ -45,6 +46,7 @@ class AmsterdamCollector {
       foam(),
       rijksmuseum(),
       stedelijk(),
+      vangogh(),
     ]);
 
     return lodash.flatten(allEvents);
