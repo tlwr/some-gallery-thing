@@ -12,6 +12,7 @@ import {collect as whitechapelGallery} from './whitechapel-gallery';
 import {collect as whiteCube} from './white-cube';
 
 import {collect as foam} from './foam';
+import {collect as huismarseille} from './huis-marseille';
 import {collect as rijksmuseum} from './rijksmuseum';
 import {collect as stedelijk} from './stedelijk';
 import {collect as vangogh} from './van-gogh';
@@ -44,6 +45,7 @@ class AmsterdamCollector {
   async collect(): Promise<ReadonlyArray<GalleryEvent>> {
     const allEvents = await Promise.all([
       foam(),
+      huismarseille(),
       rijksmuseum(),
       stedelijk(),
       vangogh(),
