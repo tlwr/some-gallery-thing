@@ -1,0 +1,13 @@
+{
+  "entry": ["src/server.ts", "src/worker/*.ts", "src/**/*.test.ts", "webpack.config.js"],
+  "extensions": [".ts", ".js", ".tsx", ".jsx"],
+  "ignorePatterns": ["**/node_modules/**"],
+  "ignoreUnresolved": [],
+  "ignoreUnimported": ["src/css/main.scss.d.ts"],
+  "ignoreUnused": [
+    "@types",
+    "tachyons",
+    "@cloudflare/wrangler",
+    "webpack-cli"
+  ]
+}
