@@ -6,7 +6,6 @@
   "ignoreUnimported": ["src/css/main.scss.d.ts"],
   "ignoreUnused": [
     "@types",
-    "tachyons",
     "@cloudflare/wrangler",
     "webpack-cli"
   ]
