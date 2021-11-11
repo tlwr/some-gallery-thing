@@ -265,7 +265,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
       },
       {
         title: 'ADE: Universal Law of the Matrix',
-        closeDate: moment('2021-11-07').toDate(),
+        closeDate: moment('2022-11-07').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',

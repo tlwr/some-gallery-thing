@@ -37,7 +37,7 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
     }
 
     const rawDate = subtitle.replace(/until/i, '').trim();
-    let closeDate = moment(rawDate, 'DD MMM');
+    let closeDate = moment(rawDate, 'DD MMM YYYY');
 
     const today = moment()
     if (!closeDate.isSame(today, 'day') && closeDate.isBefore()) {
