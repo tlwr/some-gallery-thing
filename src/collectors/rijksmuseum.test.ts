@@ -2462,7 +2462,7 @@ describe('collector', () => {
       image: 'https://rijks-api-iiif-server.azurewebsites.net/iiif/NKLVg/625,225,3414,2913/633,540/0/default.jpg',
     }, {
       title: 'Historisch Amsterdam',
-      closeDate: moment('2021-11-14').toDate(),
+      closeDate: moment('2022-11-14').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
