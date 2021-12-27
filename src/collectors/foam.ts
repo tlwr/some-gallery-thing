@@ -40,6 +40,7 @@ const parseEvents = (rawEvents: string, baseURL: string): ReadonlyArray<GalleryE
     let closeDate = moment(rawDate, 'DD MMM YYYY');
 
     const today = moment()
+    // istanbul ignore next
     if (!closeDate.isSame(today, 'day') && closeDate.isBefore()) {
       closeDate = closeDate.add(1, 'year');
     }

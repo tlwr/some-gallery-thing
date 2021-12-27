@@ -2472,7 +2472,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/30bfd8ac-1bc0-46b1-8c1c-5b32db11d100?w=633&h=540&fx=1150&fy=1132&c=7d14aed39cb60f49a436ca106b9f2b1318316d58d56d826b14e509b300341e4b',
     }, {
       title: 'Muziekparade',
-      closeDate: moment('2021-12-04').toDate(),
+      closeDate: moment('2022-12-04').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
