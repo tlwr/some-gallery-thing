@@ -64,7 +64,7 @@ export const collect = async (): Promise<ReadonlyArray<GalleryEvent>> => {
       'Host':         'thephotographersgallery.org.uk',
     },
 
-    body: `field_paragraphs_event_type_tid=2&combine=23+Nov+2019+-+23+Nov+2021&daterangepicker_start=23+Nov+2019&daterangepicker_end=23+Nov+2021&field_event_for_tid=All&view_name=whats_on&view_display_id=now_upcoming_view_page&view_args=&view_path=whats-on%2Fnow-upcoming&view_base_path=whats-on%2Fnow-upcoming`,
+    body: `field_paragraphs_event_type_tid=2&combine=23+Nov+2020+-+23+Nov+2021&daterangepicker_start=23+Nov+2020&daterangepicker_end=23+Nov+2022&field_event_for_tid=All&view_name=whats_on&view_display_id=now_upcoming_view_page&view_args=&view_path=whats-on%2Fnow-upcoming&view_base_path=whats-on%2Fnow-upcoming`,
   };
 
   const response = await request(opts);
