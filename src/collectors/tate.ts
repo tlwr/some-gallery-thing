@@ -19,7 +19,7 @@ const tateBritain: Gallery = {
 };
 
 const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
-  const html = cheerio.load(rawEvents);
+  const html = cheerio.load(rawEvents, { scriptingEnabled: false });
 
   const eventDefs = html('div.card');
 
@@ -53,7 +53,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
       closeDate = moment(closeDateText, 'DD MMM YYYY').toDate();
     }
 
-    const image = loadedElem('img').attr('src');
+    const image = loadedElem('noscript img').attr('src');
 
     let website = loadedElem('h2.card__title a').first().attr('href');
 

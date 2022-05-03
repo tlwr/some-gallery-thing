@@ -50,7 +50,7 @@ describe('collector', () => {
               <a href="/whats-on/tate-modern/exhibition/andy-warhol" aria-label="Andy Warhol" data-gtm-name="card_link_image" data-gtm-destination="page--event">
   <div class="responsive-container__outer-sizer" style=" max-width: 576px; margin: 0 auto;">
     <div class="responsive-container__sizer protected" style="--aspect-ratio: 100/70.3125; --aspect-ratio-percentage: 70.3125%; ">
-  <img src="https://www.tate.org.uk/sites/default/files/styles/width-340/public/warhol_marilyn_diptych.jpg" alt="" />
+  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-340/public/warhol_marilyn_diptych.jpg" alt="" /></noscript>
   </div></div>
               </a>
           </div>
@@ -81,7 +81,7 @@ describe('collector', () => {
               <a href="/whats-on/tate-modern/exhibition/olafur-eliasson/olafur-eliasson-cubic-structural-evolution-project" aria-label="Olafur Eliasson: The cubic structural evolution project" data-gtm-name="card_link_image" data-gtm-destination="page--event">
                 <div class="responsive-container__outer-sizer" style=" max-width: 1600px; margin: 0 auto;">
                   <div class="responsive-container__sizer" style="--aspect-ratio: 100/66.5625; --aspect-ratio-percentage: 66.5625%; ">
-                    <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/olafur_eliasson_the_cubic_structural_evolution_project.jpg" alt="" />
+                    <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/olafur_eliasson_the_cubic_structural_evolution_project.jpg" alt="" /></noscript>
                   </div>
                 </div>
               </a>
@@ -114,7 +114,7 @@ describe('collector', () => {
             <div class="card-media__inner responsive-container">
               <a href="/whats-on/tate-britain/exhibition/frank-bowling" aria-label="Frank Bowling" data-gtm-name="card_link_image" data-gtm-destination="page--event">
                 <div class="responsive-container__outer-sizer" style=" max-width: 4912px; margin: 0 auto;">
-                  <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/frank_bowling_bartica_born_i_1967_acrylic_on_canvas_235.6_x_121.9_cm.jpg" alt="" />
+                  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/frank_bowling_bartica_born_i_1967_acrylic_on_canvas_235.6_x_121.9_cm.jpg" alt="" /></noscript>
                 </div>
             </div>
               </a>
@@ -148,7 +148,7 @@ describe('collector', () => {
             <a href="/whats-on/tate-modern/exhibition/natalia-goncharova" aria-label="Natalia Goncharova" data-gtm-name="card_link_image" data-gtm-destination="page--event">
               <div class="responsive-container__outer-sizer" style=" max-width: 1116px; margin: 0 auto;">
                 <div class="responsive-container__sizer" style="--aspect-ratio: 100/143.3692; --aspect-ratio-percentage: 143.3692%; ">
-                  <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/j_2392_1.jpg" alt="" />
+                  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/j_2392_1.jpg" alt="" /></noscript>
                 </div>
               </div>
             </a>
@@ -182,7 +182,7 @@ describe('collector', () => {
             <a href="/whats-on/tate-britain/exhibition/france-lise-mcgurn" aria-label="Art Now: France-Lise McGurn: Sleepless" data-gtm-name="card_link_image" data-gtm-destination="page--event">
               <div class="responsive-container__outer-sizer" style=" max-width: 2601px; margin: 0 auto;">
                 <div class="responsive-container__sizer" style="--aspect-ratio: 100/105.3441; --aspect-ratio-percentage: 105.3441%; ">
-                  <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/francelisemcgurn_get_in_the_car_oil_300x200cm_spray_and_acrylic_on_canvas_2019_crop_new.jpg" alt="" />
+                  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/francelisemcgurn_get_in_the_car_oil_300x200cm_spray_and_acrylic_on_canvas_2019_crop_new.jpg" alt="" /></noscript>
                 </div>
               </div>
             </a>
@@ -216,7 +216,7 @@ describe('collector', () => {
             <a href="/whats-on/tate-britain/exhibition/mike-nelson" aria-label="Tate Britain Commission: Mike Nelson: The Asset Strippers" data-gtm-name="card_link_image" data-gtm-destination="page--event">
               <div class="responsive-container__outer-sizer" style=" max-width: 5504px; margin: 0 auto;">
                 <div class="responsive-container__sizer" style="--aspect-ratio: 100/150.0; --aspect-ratio-percentage: 150.0%; ">
-                  <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/mike_nelson_009.jpg" alt="" />
+                  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/mike_nelson_009.jpg" alt="" /></noscript>
                 </div>
               </div>
             </a>
@@ -250,7 +250,7 @@ describe('collector', () => {
             <a href="/whats-on/tate-modern/exhibition/takis" aria-label="Takis" data-gtm-name="card_link_image" data-gtm-destination="page--event">
               <div class="responsive-container__outer-sizer" style=" max-width: 2250px; margin: 0 auto;">
                 <div class="responsive-container__sizer" style="--aspect-ratio: 100/133.3333; --aspect-ratio-percentage: 133.3333%; ">
-                  <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/x60685_det_0008.jpg" alt="" />
+                  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/x60685_det_0008.jpg" alt="" /></noscript>
                 </div>
               </div>
             </a>
@@ -284,7 +284,7 @@ describe('collector', () => {
             <a href="/whats-on/tate-modern/exhibition/olafur-eliasson" aria-label="Olafur Eliasson: In real life" data-gtm-name="card_link_image" data-gtm-destination="page--event">
               <div class="responsive-container__outer-sizer" style=" max-width: 1200px; margin: 0 auto;">
                 <div class="responsive-container__sizer" style="--aspect-ratio: 100/116.6667; --aspect-ratio-percentage: 116.6667%; ">
-                  <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/your_uncertain_shaddow_crop_eliasson.jpg" alt="" />
+                  <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/your_uncertain_shaddow_crop_eliasson.jpg" alt="" /></noscript>
                 </div>
               </div>
             </a>
@@ -318,7 +318,7 @@ describe('collector', () => {
       <a href="/whats-on/tate-modern/exhibition/dora-maurer" aria-label="Dóra Maurer" data-gtm-name="card_link_image" data-gtm-destination="page--event">
       <div class="responsive-container__outer-sizer" style=" max-width: 3720px; margin: 0 auto;">
       <div class="responsive-container__sizer" style="--aspect-ratio: 100/100.0; --aspect-ratio-percentage: 100.0%; ">
-      <img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/x74284_relative_quasi_image_1996_photography_vintage_galeria_andras_bozso_1.jpg" alt="" />
+      <noscript><img src="https://www.tate.org.uk/sites/default/files/styles/width-170/public/x74284_relative_quasi_image_1996_photography_vintage_galeria_andras_bozso_1.jpg" alt="" /></noscript>
       </div>
       </div>
       </a>
