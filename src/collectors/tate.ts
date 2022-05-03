@@ -53,7 +53,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
       closeDate = moment(closeDateText, 'DD MMM YYYY').toDate();
     }
 
-    const image = loadedElem('img[data-original]').attr('data-original');
+    const image = loadedElem('img').attr('src');
 
     let website = loadedElem('h2.card__title a').first().attr('href');
 
