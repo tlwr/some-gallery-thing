@@ -2482,7 +2482,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/12087c61-29a6-45b4-a655-63913bed2ae8?w=633&h=540&fx=1999&fy=3312&c=e48b42364df3f9e35d757ddf01801cface7e7e8928a39c2fee3f1fd1a4bb8457',
     }, {
       title: 'Zwart Goud',
-      closeDate: moment('2021-12-31').toDate(),
+      closeDate: moment('2022-12-31').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2502,7 +2502,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/2d031a31-c782-4a43-ba7b-1cf6a54e215a?w=633&h=540&fx=3553&fy=2475&c=b8675d052f92cf4ef8245fbf2205b5b56b2b7e858fa69dce48666405bcf9054f',
     }, {
       title: 'Rijksmuseum & Slavernij',
-      closeDate: moment('2022-02-28').toDate(),
+      closeDate: moment('2023-02-28').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2512,7 +2512,7 @@ describe('collector', () => {
       image: 'https://rijks-api-iiif-server.azurewebsites.net/iiif/lfBJf/506,0,4463,3808/633,540/0/default.jpg',
     }, {
       title: 'Document Nederland: Henk Wildschut',
-      closeDate: moment('2022-01-16').toDate(),
+      closeDate: moment('2023-01-16').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2522,7 +2522,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/7b0c33fa-d67a-494b-ab4f-e626fabaa8d2?w=633&h=540&fx=4492&fy=3366&c=7e081466bbef42957a375fcbd670898785790c0d65fec4a4436585662f714e23',
     }, {
       title: 'Vergeet me niet',
-      closeDate: moment('2022-01-16').toDate(),
+      closeDate: moment('2023-01-16').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',

@@ -243,7 +243,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
 
     expect(events).toMatchObject([{
         title: 'Liz Johnson Artur of life of love of sex of movement of hope',
-        closeDate: moment('2022-02-09').toDate(),
+        closeDate: moment('2023-02-09').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',
@@ -276,7 +276,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
       },
       {
         title: 'Shigeru Onishi The Possibility of Existence',
-        closeDate: moment('2022-01-09').toDate(),
+        closeDate: moment('2023-01-09').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',
