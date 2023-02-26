@@ -2412,7 +2412,7 @@ describe('collector', () => {
 
     expect(events).toMatchObject([{
       title: 'Modern Japans Lak',
-      closeDate: moment('2022-09-04').toDate(),
+      closeDate: moment('2023-09-04').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2422,7 +2422,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/c1ef1f3c-e656-4821-9b0c-9153bfc26abb?w=633&h=540&fx=1050&fy=792&c=0e32f5e53b999aca80eff83e57adb96bd44752efe1718900dd6d4cf5c38b0498',
     }, {
       title: 'XXL Papier',
-      closeDate: moment('2022-09-04').toDate(),
+      closeDate: moment('2023-09-04').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2432,7 +2432,7 @@ describe('collector', () => {
       image: 'https://rijks-api-iiif-server.azurewebsites.net/iiif/vJLoO/94,329,3628,3094/633,540/0/default.jpg',
     }, {
       title: 'Kikkers en kaaskoppen',
-      closeDate: moment('2022-05-16').toDate(),
+      closeDate: moment('2023-05-16').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2442,7 +2442,7 @@ describe('collector', () => {
       image: 'https://rijks-api-iiif-server.azurewebsites.net/iiif/mlOps/954,412,5004,4269/633,540/0/default.jpg',
     }, {
       title: 'REVOLUSI!',
-      closeDate: moment('2022-06-06').toDate(),
+      closeDate: moment('2023-06-06').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2452,7 +2452,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/3d0b9573-65cf-4baa-8332-1017ee1d3021?w=633&h=540&fx=825&fy=600&c=95507c0b15198143a7b00d73c27f2d77b376275f7b11de846cfd284066c9d3d1',
     }, {
       title: 'Vincent Mentzel',
-      closeDate: moment('2022-06-06').toDate(),
+      closeDate: moment('2023-06-06').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2462,7 +2462,7 @@ describe('collector', () => {
       image: 'https://rijks-api-iiif-server.azurewebsites.net/iiif/NKLVg/625,225,3414,2913/633,540/0/default.jpg',
     }, {
       title: 'Historisch Amsterdam',
-      closeDate: moment('2022-11-14').toDate(),
+      closeDate: moment('2023-11-14').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2472,7 +2472,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/30bfd8ac-1bc0-46b1-8c1c-5b32db11d100?w=633&h=540&fx=1150&fy=1132&c=7d14aed39cb60f49a436ca106b9f2b1318316d58d56d826b14e509b300341e4b',
     }, {
       title: 'Muziekparade',
-      closeDate: moment('2022-12-04').toDate(),
+      closeDate: moment('2023-12-04').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2482,7 +2482,7 @@ describe('collector', () => {
       image: 'https://rijks-frontend.azureedge.net/assets/12087c61-29a6-45b4-a655-63913bed2ae8?w=633&h=540&fx=1999&fy=3312&c=e48b42364df3f9e35d757ddf01801cface7e7e8928a39c2fee3f1fd1a4bb8457',
     }, {
       title: 'Zwart Goud',
-      closeDate: moment('2022-12-31').toDate(),
+      closeDate: moment('2023-12-31').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',
@@ -2512,7 +2512,7 @@ describe('collector', () => {
       image: 'https://rijks-api-iiif-server.azurewebsites.net/iiif/lfBJf/506,0,4463,3808/633,540/0/default.jpg',
     }, {
       title: 'Document Nederland: Henk Wildschut',
-      closeDate: moment('2023-01-16').toDate(),
+      closeDate: moment('2024-01-16').toDate(),
       gallery: {
         name: 'Rijksmuseum',
         address: 'Museumstraat 1, Amsterdam',

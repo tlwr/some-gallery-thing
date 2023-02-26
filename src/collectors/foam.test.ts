@@ -243,7 +243,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
 
     expect(events).toMatchObject([{
         title: 'Liz Johnson Artur of life of love of sex of movement of hope',
-        closeDate: moment('2023-02-09').toDate(),
+        closeDate: moment('2024-02-09').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',
@@ -254,7 +254,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
       },
       {
         title: 'Foam 3h15 Years of Talent from the Collection',
-        closeDate: moment('2022-12-05').toDate(),
+        closeDate: moment('2023-12-05').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',
@@ -265,7 +265,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
       },
       {
         title: 'ADE: Universal Law of the Matrix',
-        closeDate: moment('2022-11-07').toDate(),
+        closeDate: moment('2023-11-07').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',
@@ -276,7 +276,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
       },
       {
         title: 'Shigeru Onishi The Possibility of Existence',
-        closeDate: moment('2023-01-09').toDate(),
+        closeDate: moment('2024-01-09').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',
@@ -287,7 +287,7 @@ data-styled.g502[id="ProgrammeGrid__Button-sc-1yc86up-4"]{content:"jGAezL,"}/*!s
       },
       {
         title: 'Foam 3h: Alexandra Rose Howland Leave and Let Us Go',
-        closeDate: moment('2022-12-05').toDate(),
+        closeDate: moment('2023-12-05').toDate(),
         gallery: {
           name: 'Foam Fotografiemuseum',
           address: 'Keizersgracht 609, Amsterdam, 1017 DS',

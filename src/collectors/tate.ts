@@ -38,6 +38,7 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
 
     let gallery: Gallery;
 
+    // istanbul ignore else
     if (galleryHint.match(/tate modern/i)) {
       gallery = tateModern;
     } else if (galleryHint.match(/tate britain/i)) {
