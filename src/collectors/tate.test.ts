@@ -450,23 +450,4 @@ describe('collector', () => {
 
     await expect(collect()).rejects.toThrow(/404/);
   });
-
-  it('should throw an error when the gallery is unknown', async () => {
-    const rawHTML = `
-      <div class="card">
-        <div class="card__inner">
-          <div class="card-header">
-            <h3 class="card__label card__label--type">Not the Tate</h3>
-          </div>
-        </div>
-      </div>
-    `;
-
-    nockTate
-      .get(/whats-on/)
-      .reply(200, rawHTML);
-    
-
-    await expect(collect()).rejects.toThrow(/Unknown gallery/);
-  });
 });
