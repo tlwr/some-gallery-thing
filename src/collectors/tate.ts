@@ -18,6 +18,12 @@ const tateBritain: Gallery = {
   website: 'https://www.tate.org.uk/visit/tate-britain',
 };
 
+const tateLiverpool: Gallery = {
+  name: 'Tate Liverpool',
+  address: 'Royal Albert Dock Liverpool, Liverpool L3 4BB',
+  website: 'https://www.tate.org.uk/visit/tate-liverpool',
+};
+
 const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
   const html = cheerio.load(rawEvents, { scriptingEnabled: false });
 
@@ -36,6 +42,8 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
       gallery = tateModern;
     } else if (galleryHint.match(/tate britain/i)) {
       gallery = tateBritain;
+    } else if (galleryHint.match(/tate liverpool/i)) {
+      gallery = tateLiverpool;
     } else {
       throw new Error(`Unknown gallery '${galleryHint}'`);
     }
