@@ -24,6 +24,12 @@ const tateLiverpool: Gallery = {
   website: 'https://www.tate.org.uk/visit/tate-liverpool',
 };
 
+const tateStIves: Gallery = {
+  name: 'Tate St Ives',
+  address: 'Porthmeor Beach, St Ives, Cornwall TR26 1TG',
+  website: 'https://www.tate.org.uk/visit/tate-st-ives',
+};
+
 const barnsleyCivic: Gallery = {
   name: 'Barnsley Civic',
   address: 'The Civic, Hanson Street, Barnsley, S70 2HZ',
@@ -51,6 +57,8 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
       gallery = tateBritain;
     } else if (galleryHint.match(/tate liverpool/i)) {
       gallery = tateLiverpool;
+    } else if (galleryHint.match(/tate st ives/i)) {
+      gallery = tateStIves;
     } else if (galleryHint.match(/barnsley/i)) {
       gallery = barnsleyCivic;
     } else {
