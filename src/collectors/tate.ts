@@ -24,6 +24,12 @@ const tateLiverpool: Gallery = {
   website: 'https://www.tate.org.uk/visit/tate-liverpool',
 };
 
+const barnsleyCivic: Gallery = {
+  name: 'Barnsley Civic',
+  address: 'The Civic, Hanson Street, Barnsley, S70 2HZ',
+  website: 'https://barnsleycivic.co.uk',
+};
+
 const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
   const html = cheerio.load(rawEvents, { scriptingEnabled: false });
 
@@ -45,6 +51,8 @@ const parseEvents = (rawEvents: string): ReadonlyArray<GalleryEvent> => {
       gallery = tateBritain;
     } else if (galleryHint.match(/tate liverpool/i)) {
       gallery = tateLiverpool;
+    } else if (galleryHint.match(/barnsley/i)) {
+      gallery = barnsleyCivic;
     } else {
       throw new Error(`Unknown gallery '${galleryHint}'`);
     }
