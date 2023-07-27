@@ -43,7 +43,7 @@
     "@types/jest": "^27.0.2",
     "@types/lodash": "^4.14.173",
     "@types/nock": "^11.1.0",
-    "@types/node": "^16.9.4",
+    "@types/node": "^20.4.5",
     "@types/node-fetch": "^2.5.12",
     "@types/react": "^17.0.22",
     "@types/react-dom": "^17.0.9",
